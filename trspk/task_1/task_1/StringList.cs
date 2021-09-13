@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace task_1
+namespace task1_1
 {
 	class StringList
 	{
