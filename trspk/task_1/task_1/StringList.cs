@@ -8,7 +8,7 @@ namespace task1_1
 {
 	class StringList
 	{
-		
+
 		private string[] Str = new string[100];
 		private int i = 0;
 
@@ -17,9 +17,9 @@ namespace task1_1
 			Str[i] = str;
 			return i++;
 		}
-		public void Delete(int i) 
+		public void Delete(int i)
 		{
-			if(Str[i] != null && Str.Length > i)
+			if (Str.Length > i && Str[i] != null)
 			{
 				string[] newStr = new string[100];
 
@@ -55,7 +55,7 @@ namespace task1_1
 		}
 		public void Update(int i, string str) 
 		{
-			if(Str[i] != null && Str.Length > i)
+			if(Str.Length > i && Str[i] != null)
 			{
 				Str[i] = str;
 			}
@@ -66,11 +66,11 @@ namespace task1_1
 		}
 		public string GetAt(int i) 
 		{
-			if (Str[i] != null && Str.Length > i)
+			if (Str.Length > i && Str[i] != null)
 			{
 				return Str[i];
 			}
-			return "GetAt: Строки не сущетвует";
+			return "Строки не сущетвует";
 		}
 		public void Show()
 		{

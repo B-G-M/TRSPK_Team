@@ -16,7 +16,7 @@ namespace task1_1
 			str.Show();
 			str.Update(2, "test 3#");
 			Console.WriteLine("GetAt: " + str.GetAt(2)); 
-			str.Delete(2);
+			str.Delete(50);
 			Console.WriteLine("GetAt: " + str.GetAt(2));
 			str.Show();
 		}
