@@ -20,7 +20,7 @@ namespace task1_3
 		private Node temp;
 		public void create_Tree(Node node)
 		{
-			node.rnd_num = node.Text == "A" ? rnd.Next(1, 3) : rnd.Next(0, 3);
+			node.rnd_num = node.Text == "A" ? 3 : rnd.Next(0, 3);
 			
 			for (int i = 0; i < node.rnd_num; i++)
 			{
