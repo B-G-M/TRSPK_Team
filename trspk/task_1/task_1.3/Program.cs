@@ -8,9 +8,8 @@ namespace task1_3
 		static void Main(string[] args)
 		{
 			Node test = new Node();
-			test.create_Tree(test);
-			Console.WriteLine("j= " + Node.j);
-			Console.WriteLine(test.print_Tree(test)); 
+			test.Create_Tree(test);
+			Console.WriteLine(test.Сreate_string (test)); 
 		}
 	}
 }
