@@ -201,6 +201,40 @@ namespace task2_2
 			cycle = false;
 			return sum.number;
 		}
+		public static string operator *(LongNumber number1, LongNumber number2)
+		{
+			LongNumber mult = new();
+			int lenght1 = number1.number.Length;
+			int lenght2 = number2.number.Length;
+			int temp1 = 0,
+				temp2 = 0;
+			if (number1.number[0] == '0' || number2.number[0] == '0')
+			{
+				mult.number = "0";
+				return mult.number;
+			}
+
+			if (lenght1 > lenght2)
+			{
+				for (int i = number1.number.Length; i == 0; i--)
+				{
+					int k = i; int c = 0;
+					for (int j = number2.number.Length; j == 0; j--) {
+						temp1 = (number1.number[0] - '0') * (number2.number[0] - '0');
+						temp1 = temp1 + c + number1.number[k];
+						c = temp1 / 10;
+						mult.number = temp1 % 10 + '0';
+						k--;
+					}
+					if (c!=0) 
+                    {
+						mult.number = c + '0';
+						k--;
+                    }
+				}
+				return mult.number;
+			}
+        }
 		public static bool operator <(LongNumber number1, LongNumber number2)
 		{
 			bool da = true,
@@ -302,6 +336,7 @@ namespace task2_2
 			}
 			return number;
 		}
+		
 	}
 
 
