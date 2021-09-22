@@ -8,6 +8,11 @@ namespace task2_2
 		{
 			number = "";
 		}
+
+		public LongNumber(string num)
+		{
+			number = num;
+		}
 		public LongNumber(int num)
 		{
 			number = Convert.ToString(num);
@@ -40,7 +45,7 @@ namespace task2_2
 
 					if (sum.number[0] == '-' && sum.number[1] == '-')
 					{
-						Two_minus_to_plus(ref sum);
+						Two_minus_to_plus(sum);
 					}
 					return sum.number;
 				}
@@ -51,13 +56,13 @@ namespace task2_2
 			}
 			if (number1.number.Length > number2.number.Length)
 			{
-				Swap(ref number1, ref number2);
+				Swap(number1,number2);
 			}
 
 			int temp1 = 0,
-			temp2 = 0,
-			num1_lenght = number1.number.Length,
-			num2_lenght = number2.number.Length;
+				temp2 = 0,
+				num1_lenght = number1.number.Length,
+				num2_lenght = number2.number.Length;
 
 			for (; num1_lenght > 0;)
 			{
@@ -89,6 +94,7 @@ namespace task2_2
 
 				temp2 += (number2.number[num2_lenght] - '0');
 				sum.number = sum.number.Insert(0, Convert.ToString(temp2));
+				temp2 = 0;
 			}
 
 			if (number1.number[0] == '-' && number2.number[0] == '-')
@@ -100,8 +106,6 @@ namespace task2_2
 		}
 		public static string operator -(LongNumber number1, LongNumber number2)
 		{
-			// Закоментируй код сука !!!!!!
-
 			LongNumber sub = new();
 			bool less = false;
 
@@ -123,7 +127,7 @@ namespace task2_2
 			if (Mod(number1) < Mod(number2))
 			{
 				less = true;
-				Swap(ref number1, ref number2);
+				Swap(number1,number2);
 			}
 
 			int temp1,
@@ -132,21 +136,21 @@ namespace task2_2
 				num2_lenght = number2.number.Length,
 				i = num1_lenght < num2_lenght ? num1_lenght : num2_lenght;
 
-			for ( ;i > 0; i--)
+			for (; i > 0; i--)
 			{
+				if (number1.number[num1_lenght - 1] == '-' || number2.number[num2_lenght - 1] == '-') { break; }
 				num1_lenght--;
 				num2_lenght--;
-				if (number1.number[num1_lenght] == '-' || number2.number[num2_lenght] == '-') { break; }
 
 				temp1 = (number1.number[num1_lenght] - '0');
 				temp2 = (number2.number[num2_lenght] - '0');
 
-				if ( temp1 - temp2 >= 0)
+				if (temp1 - temp2 >= 0)
 				{
 					sub.number = sub.number.Insert(0, Convert.ToString(temp1 - temp2));
 					continue;
 				}
-				Give_ten(ref number1, num1_lenght);
+				Give_ten(number1, num1_lenght);
 				temp1 += 10;
 				temp1 -= temp2;
 				sub.number = sub.number.Insert(0, Convert.ToString(temp1));
@@ -160,7 +164,7 @@ namespace task2_2
 				sub.number = sub.number.Insert(0, Convert.ToString(temp1));
 			}
 
-			if(less)
+			if (less)
 			{
 				sub.number = sub.number.Insert(0, Convert.ToString('-'));
 			}
@@ -172,49 +176,113 @@ namespace task2_2
 
 			if (sub.number[0] == '-' && sub.number[1] == '-')
 			{
-				Two_minus_to_plus(ref sub);
+				Two_minus_to_plus(sub);
 			}
 			cycle = false;
 			return sub.number;
 		}
 		public static string operator *(LongNumber number1, LongNumber number2)
 		{
-			LongNumber mult = new();
-			int lenght1 = number1.number.Length;
-			int lenght2 = number2.number.Length;
-			int temp1 = 0,
+			LongNumber mult = new(0);
+			LongNumber mult_rez = new();
+
+			int temp1,
 				temp2 = 0;
+
 			if (number1.number[0] == '0' || number2.number[0] == '0')
 			{
 				mult.number = "0";
 				return mult.number;
 			}
 
-			if (lenght1 > lenght2)
+			if (number1.number.Length < number2.number.Length)
 			{
-				for (int i = number1.number.Length; i == 0; i--)
-				{
-					int k = i; int c = 0;
-					for (int j = number2.number.Length; j == 0; j--) {
-						temp1 = (number1.number[0] - '0') * (number2.number[0] - '0');
-						temp1 = temp1 + c + number1.number[k];
-						c = temp1 / 10;
-						mult.number = temp1 % 10 + '0';
-						k--;
-					}
-					if (c!=0) 
-                    {
-						mult.number = c + '0';
-						k--;
-                    }
-				}
-				return mult.number;
+				Swap(number1,number2);
 			}
-        }
+
+			for (int i = number2.number.Length - 1; i >= 0; i--)
+			{
+				if (number2.number[i] == '-') { break; };
+
+				for (int j = number1.number.Length - 1; j >= 0; j--)
+				{
+					if (number1.number[j] == '-') { break; };
+					temp1 = (number1.number[j] - '0') * (number2.number[i] - '0');
+					temp1 += temp2;
+					temp2 = temp1 / 10;
+					temp1 %= 10;
+					mult_rez.number = mult_rez.number.Insert(0, Convert.ToString(temp1));
+					if (j - 1 < 0 && temp2 != 0)
+					{
+						mult_rez.number = mult_rez.number.Insert(0, Convert.ToString(temp2));
+					}
+				}
+
+				int k = number2.number.Length - i;
+				while (k > 1)
+				{
+					mult_rez.number += "0";
+					k--;
+				}
+
+				mult = new(mult + mult_rez);
+				mult_rez.number = "";
+			}
+
+			if (number1.number[0] == '-' && number2.number[0] != '-' || number1.number[0] != '-' && number2.number[0] == '-')
+			{
+				mult.number = mult.number.Insert(0, Convert.ToString('-'));
+			}
+			return mult.number;
+
+		}
 		public static string operator /(LongNumber number1, LongNumber number2)
 		{
+			bool positive = true,
+				changed_sign = false;
 			LongNumber div = new();
+			LongNumber selection = new(number2);
 
+			if (Mod(number1) < Mod(number2))
+			{
+				return div.number = "0";
+			}
+
+			if (number1.number[0] == '-' && number2.number[0] != '-' || number1.number[0] != '-' && number2.number[0] == '-')
+			{
+				positive = false;
+				if (number2.number[0] == '-') 
+				{
+					changed_sign = true;
+					number2.number = number2.number.Insert(0, Convert.ToString('-'));
+					Two_minus_to_plus(number2);
+				};
+			}
+			for (int i = 0; ; i++)
+			{
+				div.number = Convert.ToString(i);
+				selection = new(div * selection);
+
+				if (Mod(number1) < Mod(selection))
+				{
+					div.number = Convert.ToString(i - 1);
+					break;
+				}
+				if (Mod(number1) == Mod(selection))
+				{
+					break;
+				}
+				selection = new(number2);
+			}
+
+			if (!positive)
+			{
+				if (changed_sign)
+				{
+					number2.number = number2.number.Insert(0, Convert.ToString('-'));
+				}
+				div.number = div.number.Insert(0, Convert.ToString('-'));
+			}
 
 			return div.number;
 		}
@@ -250,7 +318,7 @@ namespace task2_2
 				}
 				return !da;
 			}
-			else if(number1.number.Length > number2.number.Length)
+			else if (number1.number.Length > number2.number.Length)
 			{
 				if (positive)
 				{
@@ -259,10 +327,11 @@ namespace task2_2
 				return da;
 			}
 
-			for (	; i < number1.number.Length; i++)
+			for (; i < number1.number.Length; i++)
 			{
 				temp1 = (number1.number[i] - '0');
 				temp2 = (number2.number[i] - '0');
+				if (temp1 == temp2){continue;}
 
 				if (temp1 < temp2)
 				{
@@ -272,6 +341,14 @@ namespace task2_2
 					}
 					return !da;
 				}
+				if (temp1 > temp2)
+				{
+					if (positive)
+					{
+						return !da;
+					}
+					return da;
+				}
 			}
 			return !da;
 		}
@@ -279,7 +356,54 @@ namespace task2_2
 		{
 			return !(number1 < number2);
 		}
-		private static void Two_minus_to_plus(ref LongNumber number)
+		public static bool operator ==(LongNumber number1, LongNumber number2)
+		{
+			bool da = true;
+			int i = 0,
+				temp1,
+				temp2;
+
+			if (number1.number[0] == '-' && number2.number[0] != '-')
+			{
+				return !da;
+			}
+
+			if (number2.number[0] == '-' && number1.number[0] != '-')
+			{
+				return !da;
+			}
+
+			if (number2.number[0] == '-' && number1.number[0] == '-')
+			{
+				i++;
+			}
+
+			if (number1.number.Length < number2.number.Length)
+			{
+				return !da;
+			}
+			else if (number1.number.Length > number2.number.Length)
+			{
+				return !da;
+			}
+
+			for (; i < number1.number.Length; i++)
+			{
+				temp1 = (number1.number[i] - '0');
+				temp2 = (number2.number[i] - '0');
+
+				if (temp1 != temp2)
+				{
+					return !da;
+				}
+			}
+			return da;
+		}
+		public static bool operator !=(LongNumber number1, LongNumber number2)
+		{
+			return !(number1 == number2);
+		}
+		private static void Two_minus_to_plus(LongNumber number)
 		{
 			char[] arr = new char[number.number.Length - 2];
 			for (int j = 2; j < number.number.Length; j++)
@@ -289,7 +413,7 @@ namespace task2_2
 			number.number = new string(arr);
 			return;
 		}
-		private static void Give_ten(ref LongNumber number,int i)
+		private static void Give_ten(LongNumber number,int i)
 		{
 			char[] arr = number.number.ToCharArray();
 			int k = i,
@@ -314,7 +438,7 @@ namespace task2_2
 			}
 			number.number = new string(arr);
 		}
-		private static void Swap(ref LongNumber number1, ref LongNumber number2)
+		private static void Swap(LongNumber number1,LongNumber number2)
 		{
 			LongNumber temp = new();
 			temp.number = number1.number;
@@ -337,8 +461,48 @@ namespace task2_2
 			}
 			return number;
 		}
+		public bool Equals(LongNumber number)
+		{
+			bool da = true;
+			int i = 0,
+				temp1,
+				temp2;
 
+			if (this.number[0] == '-' && number.number[0] != '-')
+			{
+				return !da;
+			}
 
+			if (number.number[0] == '-' && this.number[0] != '-')
+			{
+				return !da;
+			}
+
+			if (this.number.Length < number.number.Length)
+			{
+				return !da;
+			}
+			else if (this.number.Length > number.number.Length)
+			{
+				return !da;
+			}
+			if (this.number[0] == '-' && number.number[0] == '-')
+			{
+				i++;
+			}
+
+			for (; i < this.number.Length; i++)
+			{
+				temp1 = (number.number[i] - '0');
+				temp2 = (this.number[i] - '0');
+
+				if (temp1 != temp2)
+				{
+					return !da;
+				}
+			}
+			return da;
+		}
 	}
 
 
@@ -346,12 +510,13 @@ namespace task2_2
 	{
 		static void Main(string[] args)
 		{
-			int a = -2,
-				b = -3;
+			int a = 85528148,
+				b = 248965;
 			LongNumber a1 = new(a);
 			LongNumber b1 = new(b);
 			Console.WriteLine(a + " + " + b + " = " + (a + b) + '\n');
 			Console.WriteLine("LongNumber = " + (a1 + b1));
+
 		}
 	}
 }
