@@ -93,8 +93,16 @@ namespace task2_2
 				if (number2.number[num2_lenght] == '-') { break; }
 
 				temp2 += (number2.number[num2_lenght] - '0');
+
+				if (temp2 <= 9 || num2_lenght == 0)
+				{
+					sum.number = sum.number.Insert(0, Convert.ToString(temp2));
+					temp2 = 0;
+					continue;
+				}
+				temp2 %= 10;
 				sum.number = sum.number.Insert(0, Convert.ToString(temp2));
-				temp2 = 0;
+				temp2 = 1;
 			}
 
 			if (number1.number[0] == '-' && number2.number[0] == '-')
@@ -358,46 +366,11 @@ namespace task2_2
 		}
 		public static bool operator ==(LongNumber number1, LongNumber number2)
 		{
-			bool da = true;
-			int i = 0,
-				temp1,
-				temp2;
-
-			if (number1.number[0] == '-' && number2.number[0] != '-')
+			if (number1.number ==  number2.number)
 			{
-				return !da;
+				return true;
 			}
-
-			if (number2.number[0] == '-' && number1.number[0] != '-')
-			{
-				return !da;
-			}
-
-			if (number2.number[0] == '-' && number1.number[0] == '-')
-			{
-				i++;
-			}
-
-			if (number1.number.Length < number2.number.Length)
-			{
-				return !da;
-			}
-			else if (number1.number.Length > number2.number.Length)
-			{
-				return !da;
-			}
-
-			for (; i < number1.number.Length; i++)
-			{
-				temp1 = (number1.number[i] - '0');
-				temp2 = (number2.number[i] - '0');
-
-				if (temp1 != temp2)
-				{
-					return !da;
-				}
-			}
-			return da;
+			return false;
 		}
 		public static bool operator !=(LongNumber number1, LongNumber number2)
 		{
@@ -463,45 +436,11 @@ namespace task2_2
 		}
 		public bool Equals(LongNumber number)
 		{
-			bool da = true;
-			int i = 0,
-				temp1,
-				temp2;
-
-			if (this.number[0] == '-' && number.number[0] != '-')
+			if (this.number == number.number)
 			{
-				return !da;
+				return true;
 			}
-
-			if (number.number[0] == '-' && this.number[0] != '-')
-			{
-				return !da;
-			}
-
-			if (this.number.Length < number.number.Length)
-			{
-				return !da;
-			}
-			else if (this.number.Length > number.number.Length)
-			{
-				return !da;
-			}
-			if (this.number[0] == '-' && number.number[0] == '-')
-			{
-				i++;
-			}
-
-			for (; i < this.number.Length; i++)
-			{
-				temp1 = (number.number[i] - '0');
-				temp2 = (this.number[i] - '0');
-
-				if (temp1 != temp2)
-				{
-					return !da;
-				}
-			}
-			return da;
+			return false;
 		}
 	}
 
@@ -514,8 +453,8 @@ namespace task2_2
 				b = 248965;
 			LongNumber a1 = new(a);
 			LongNumber b1 = new(b);
-			Console.WriteLine(a + " + " + b + " = " + (a + b) + '\n');
-			Console.WriteLine("LongNumber = " + (a1 + b1));
+			Console.WriteLine(a + " / " + b + " = " + (a / b) + '\n');
+			Console.WriteLine("LongNumber = " + (a1 / b1));
 
 		}
 	}
