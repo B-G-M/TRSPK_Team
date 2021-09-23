@@ -8,7 +8,6 @@ namespace task2_2
 		{
 			number = "";
 		}
-
 		public LongNumber(string num)
 		{
 			number = num;
@@ -22,14 +21,14 @@ namespace task2_2
 			number = longNumber.number;
 		}
 
-		private static bool cycle = false;
 		private string number;
-
 		public string Number
 		{
 			get { return number; }
 			set { number = value; }
 		}
+
+		private static bool cycle = false;
 
 		public static string operator +(LongNumber number1, LongNumber number2)
 		{
@@ -85,6 +84,11 @@ namespace task2_2
 				temp2 = 1;
 				sum.number = sum.number.Insert(0, Convert.ToString(temp1));
 				temp1 = 0;
+
+				if (num2_lenght == 0 && temp2 != 0)
+				{
+					sum.number = sum.number.Insert(0, Convert.ToString(temp2));
+				}
 			}
 
 			for (; 0 < num2_lenght;)
@@ -246,10 +250,12 @@ namespace task2_2
 		}
 		public static string operator /(LongNumber number1, LongNumber number2)
 		{
-			bool positive = true,
-				changed_sign = false;
-			LongNumber div = new();
+			LongNumber div =new(0);
 			LongNumber selection = new(number2);
+
+			bool less = true,
+				positive = true,
+				changed_sign = false;
 
 			if (Mod(number1) < Mod(number2))
 			{
@@ -266,15 +272,30 @@ namespace task2_2
 					Two_minus_to_plus(number2);
 				};
 			}
-			for (int i = 0; ; i++)
+			for (double i = 0; ;i++)
 			{
-				div.number = Convert.ToString(i);
+				if (less)
+				{
+					div += (LongNumber)(number1.number.Length * Math.Pow(10, (number1.number.Length)/2));
+				}
+				else
+				{
+					div -= 1;
+				}
 				selection = new(div * selection);
 
+				if (Mod(number1) > Mod(selection))
+				{
+					if  (!less)
+					{
+						break;
+					}
+					less = true;
+				}
+				
 				if (Mod(number1) < Mod(selection))
 				{
-					div.number = Convert.ToString(i - 1);
-					break;
+					less = false;
 				}
 				if (Mod(number1) == Mod(selection))
 				{
@@ -376,6 +397,57 @@ namespace task2_2
 		{
 			return !(number1 == number2);
 		}
+
+		public static implicit operator LongNumber(int number)
+		{
+			return new LongNumber (number);
+		}
+		public static implicit operator LongNumber(string number)
+		{
+			return new LongNumber(number);
+		}
+		public static implicit operator LongNumber(long number)
+		{
+			return new LongNumber(Convert.ToString(number));
+		}
+		public static implicit operator LongNumber(short number)
+		{
+			return new LongNumber(Convert.ToString(number));
+		}
+		public static implicit operator LongNumber(bool number)
+		{
+			if (number)
+			{
+				return new LongNumber("1");
+			}
+			return new LongNumber("0");
+		}
+
+		public static explicit operator int(LongNumber number)
+		{
+			return Convert.ToInt32(number.number);
+		}
+		public static explicit operator string(LongNumber number)
+		{
+			return number.number;
+		}
+		public static explicit operator long(LongNumber number)
+		{
+			return Convert.ToInt64(number.number);
+		}
+		public static explicit operator short(LongNumber number)
+		{
+			return Convert.ToInt16(number.number);
+		}
+		public static explicit operator bool(LongNumber number)
+		{
+			if (number != "0")
+			{
+				return true;
+			}
+			return false;
+		}
+
 		private static void Two_minus_to_plus(LongNumber number)
 		{
 			char[] arr = new char[number.number.Length - 2];
@@ -409,6 +481,15 @@ namespace task2_2
 				arr[k] = Convert.ToChar('0' + temp);
 				k++;
 			}
+			if (arr[0] == '0')
+			{
+				char[] arr1 = new char [arr.Length - 1];
+				for (int j = 0; j < arr.Length - 1; j++)
+				{
+					arr1[j] = arr[j + 1];
+				}
+				arr = arr1;
+			}
 			number.number = new string(arr);
 		}
 		private static void Swap(LongNumber number1,LongNumber number2)
@@ -434,14 +515,21 @@ namespace task2_2
 			}
 			return number;
 		}
+
+		public override bool Equals(object number) => this.Equals(number as LongNumber);
+		public override int GetHashCode()
+		{
+			return number.GetHashCode();
+		}
 		public bool Equals(LongNumber number)
 		{
-			if (this.number == number.number)
+			if (number is LongNumber && this.number == number.number)
 			{
 				return true;
 			}
 			return false;
 		}
+
 	}
 
 
@@ -449,8 +537,8 @@ namespace task2_2
 	{
 		static void Main(string[] args)
 		{
-			int a = 85528148,
-				b = 248965;
+			int a = 10000000,
+				b = 1;
 			LongNumber a1 = new(a);
 			LongNumber b1 = new(b);
 			Console.WriteLine(a + " / " + b + " = " + (a / b) + '\n');

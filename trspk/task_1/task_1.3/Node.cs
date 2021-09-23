@@ -58,26 +58,18 @@ namespace task1_3
 						tree += "  ";
 					}
 				}
-				if (node.Children.Count() != 0)
+				if (node.Children.Last() == temp)
 				{
-					if (node.Children.Last() == temp)
-					{
-						tree += "└─";
-					}
-					else
-					{
-						tree += "├─";
-					}
-					deep++;
-					Сreate_string (temp);
-					deep--;
+					tree += "└─";
 				}
 				else
 				{
-					tree += "└─";
-					tree += node.Text + '\n';
-					Console.WriteLine(tree);
+					tree += "├─";
 				}
+				deep++;
+				Сreate_string (temp);
+				deep--;
+
 				
 			}
 			return tree;
