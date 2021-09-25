@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace task2_2
 {
@@ -159,15 +160,22 @@ namespace task2_2
 
 				if (temp1 - temp2 >= 0)
 				{
+					if (temp1 - temp2 == 0 && i == 1)
+					{
+						continue;
+					}
 					sub.number = sub.number.Insert(0, Convert.ToString(temp1 - temp2));
 					continue;
 				}
 				Give_ten(number1, num1_lenght);
 				temp1 += 10;
+				if (temp1 - temp2 <= 9 && i == 1)
+				{
+					num1_lenght--;
+				}
 				temp1 -= temp2;
 				sub.number = sub.number.Insert(0, Convert.ToString(temp1));
 			}
-
 			for (; 0 < num1_lenght;)
 			{
 				num1_lenght--;
@@ -175,7 +183,10 @@ namespace task2_2
 				temp1 = (number1.number[num1_lenght] - '0');
 				sub.number = sub.number.Insert(0, Convert.ToString(temp1));
 			}
-
+			while (sub.number[0] == '0')
+			{
+				sub.number = sub.number.Remove(0, 1);
+			}
 			if (less)
 			{
 				sub.number = sub.number.Insert(0, Convert.ToString('-'));
@@ -229,7 +240,7 @@ namespace task2_2
 						mult_rez.number = mult_rez.number.Insert(0, Convert.ToString(temp2));
 					}
 				}
-
+				temp2 = 0;
 				int k = number2.number.Length - i;
 				while (k > 1)
 				{
@@ -250,60 +261,73 @@ namespace task2_2
 		}
 		public static string operator /(LongNumber number1, LongNumber number2)
 		{
-			LongNumber div =new(0);
-			LongNumber selection = new(number2);
+			LongNumber div = new();
+			LongNumber temp1 = new();
+			LongNumber temp2 = new();
 
-			bool less = true,
-				positive = true,
+			char[] arr1 = number1.number.ToCharArray();
+
+			bool positive = true,
 				changed_sign = false;
 
 			if (Mod(number1) < Mod(number2))
 			{
 				return div.number = "0";
 			}
-
 			if (number1.number[0] == '-' && number2.number[0] != '-' || number1.number[0] != '-' && number2.number[0] == '-')
 			{
 				positive = false;
-				if (number2.number[0] == '-') 
+				if (number2.number[0] == '-')
 				{
 					changed_sign = true;
 					number2.number = number2.number.Insert(0, Convert.ToString('-'));
 					Two_minus_to_plus(number2);
 				};
 			}
-			for (double i = 0; ;i++)
+
+			for (int i = 0; i < number1.number.Length; i++)
 			{
-				if (less)
-				{
-					div += (LongNumber)(number1.number.Length * Math.Pow(10, (number1.number.Length)/2));
-				}
-				else
-				{
-					div -= 1;
-				}
-				selection = new(div * selection);
+				temp1.number += arr1[i];
 
-				if (Mod(number1) > Mod(selection))
+				if (Mod(temp1) > Mod(number2))
 				{
-					if  (!less)
+					for (int j = 1; ; j++)
 					{
-						break;
+						temp2 = new(number2);
+						temp2 *= j;
+						if (temp1 < temp2)
+						{
+							j--;
+							temp2 = new(number2);
+							temp2 *= j;
+							if (temp1 == temp2)
+							{
+								temp1.number = "";
+								div.number += j;
+								break;
+							}
+							temp1 -= temp2;
+							div.number += j;
+							break;
+						}
 					}
-					less = true;
 				}
-				
-				if (Mod(number1) < Mod(selection))
-				{
-					less = false;
-				}
-				if (Mod(number1) == Mod(selection))
-				{
-					break;
-				}
-				selection = new(number2);
 			}
-
+			temp1 = new(div);
+			temp2 = new(number2);
+			temp2 *= temp1;
+			if (temp2 < number1)
+			{
+				while (temp2 < number1)
+				{
+					div.number += "0";
+					temp1 = new(div);
+					temp2 = new(number2);
+					temp2 *= temp1;
+				}
+				div.number = div.number.Remove(div.number.Length - 1);
+			}
+			
 			if (!positive)
 			{
 				if (changed_sign)
@@ -448,6 +472,35 @@ namespace task2_2
 			return false;
 		}
 
+		public static LongNumber ToLongNumber(string number)
+		{
+			return new LongNumber(number);
+		}
+		public static LongNumber ToLongNumber(StringBuilder number)
+		{
+			return new LongNumber(Convert.ToString(number));
+		}
+		public static bool TryParse(string str, out LongNumber number)
+		{
+			try
+			{ 
+				number = new LongNumber(str);
+				return true;
+			}
+			catch
+			{
+				number = null;
+				return false;
+			}
+		}
+
+		private static void Ffff(LongNumber number)
+		{
+			while(number.number[0] != '0')
+			{
+				number.number = number.number.Remove(0);
+			}
+		}
 		private static void Two_minus_to_plus(LongNumber number)
 		{
 			char[] arr = new char[number.number.Length - 2];
@@ -537,11 +590,12 @@ namespace task2_2
 	{
 		static void Main(string[] args)
 		{
-			int a = 10000000,
-				b = 1;
-			LongNumber a1 = new(a);
-			LongNumber b1 = new(b);
-			Console.WriteLine(a + " / " + b + " = " + (a / b) + '\n');
+		//	int a = 24546,
+		//		b = 92;
+			LongNumber a1 = new("96372656257285432687319471");
+			LongNumber b1 = new("43582592345635737");
+
+			//Console.WriteLine(a + " / " + b + " = " + (a / b) + '\n');
 			Console.WriteLine("LongNumber = " + (a1 / b1));
 
 		}
