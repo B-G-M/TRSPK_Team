@@ -143,6 +143,12 @@ namespace task2_2
 				Swap(number1,number2);
 			}
 
+			if (number1 == number2)
+			{
+				sub = "0";
+				return sub.number;
+			}
+
 			int temp1,
 				temp2,
 				num1_lenght = number1.number.Length,
