@@ -6,7 +6,13 @@ namespace task_3_1
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			int a, up, down;
+			a = Convert.ToInt32(Console.ReadLine()); // кол-во измерений
+			up = Convert.ToInt32(Console.ReadLine());
+			down = Convert.ToInt32(Console.ReadLine());
+			Console.WriteLine("Кол-во измерений: " + a);
+			Console.WriteLine("Верхняя граница: " + up);
+			Console.WriteLine("Нижняя граница: " + down);
 		}
 	}
 }
