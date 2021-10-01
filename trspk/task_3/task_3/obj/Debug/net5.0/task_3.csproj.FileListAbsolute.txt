@@ -1,0 +1,16 @@
+D:\TRSPK_Team\trspk\task_3\task_3\bin\Debug\net5.0\task_3.exe
+D:\TRSPK_Team\trspk\task_3\task_3\bin\Debug\net5.0\task_3.deps.json
+D:\TRSPK_Team\trspk\task_3\task_3\bin\Debug\net5.0\task_3.runtimeconfig.json
+D:\TRSPK_Team\trspk\task_3\task_3\bin\Debug\net5.0\task_3.runtimeconfig.dev.json
+D:\TRSPK_Team\trspk\task_3\task_3\bin\Debug\net5.0\task_3.dll
+D:\TRSPK_Team\trspk\task_3\task_3\bin\Debug\net5.0\ref\task_3.dll
+D:\TRSPK_Team\trspk\task_3\task_3\bin\Debug\net5.0\task_3.pdb
+D:\TRSPK_Team\trspk\task_3\task_3\obj\Debug\net5.0\task_3.csproj.AssemblyReference.cache
+D:\TRSPK_Team\trspk\task_3\task_3\obj\Debug\net5.0\task_3.GeneratedMSBuildEditorConfig.editorconfig
+D:\TRSPK_Team\trspk\task_3\task_3\obj\Debug\net5.0\task_3.AssemblyInfoInputs.cache
+D:\TRSPK_Team\trspk\task_3\task_3\obj\Debug\net5.0\task_3.AssemblyInfo.cs
+D:\TRSPK_Team\trspk\task_3\task_3\obj\Debug\net5.0\task_3.csproj.CoreCompileInputs.cache
+D:\TRSPK_Team\trspk\task_3\task_3\obj\Debug\net5.0\task_3.dll
+D:\TRSPK_Team\trspk\task_3\task_3\obj\Debug\net5.0\ref\task_3.dll
+D:\TRSPK_Team\trspk\task_3\task_3\obj\Debug\net5.0\task_3.pdb
+D:\TRSPK_Team\trspk\task_3\task_3\obj\Debug\net5.0\task_3.genruntimeconfig.cache
