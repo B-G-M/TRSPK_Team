@@ -49,7 +49,8 @@ namespace task_4_5
 		}
 		class LogSubscriber
 		{
-			StreamWriter sw = new StreamWriter("C:\\Users\\User\\Desktop\\log.txt");
+			readonly FileStream log = File.Create("C:\\Users\\Савва\\Desktop\\log.txt");
+			StreamWriter sw = new StreamWriter("C:\\Users\\Савва\\Desktop\\log.txt");
 			public void print(char key)
 			{
 				if (key == '`' || key == 'ё')
