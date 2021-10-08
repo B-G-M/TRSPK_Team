@@ -13,7 +13,7 @@ namespace task_3_1
 			down = Convert.ToInt32(Console.ReadLine());
 			Console.WriteLine("Введите верхнюю границу: ");
 			up = Convert.ToInt32(Console.ReadLine());
-			
+
 			if (down > up)
 			{
 				Console.WriteLine("Нижняя граница больше верхней ");
@@ -27,12 +27,12 @@ namespace task_3_1
 			Random random = new Random();
 
 			for (int i = 0; i < a; i++)
-            {
-                for (int j = 0; j < b; j++)
-                {
+			{
+				for (int j = 0; j < b; j++)
+				{
 					myArr[i, j] = random.Next(down, up);
-                }
-            }
+				}
+			}
 
 			Console.WriteLine("Кол-во столбцов: " + a);
 			Console.WriteLine("Кол-во строк: " + b);
@@ -40,14 +40,14 @@ namespace task_3_1
 			Console.WriteLine("Верхняя граница: " + up);
 
 
-            for (int i = 0; i < a; i++)
-            {
-                for (int j = 0; j < b; j++)
-                {
-					Console.Write(myArr[i, j] + "\t") ;
-                }
+			for (int i = 0; i < a; i++)
+			{
+				for (int j = 0; j < b; j++)
+				{
+					Console.Write(myArr[i, j] + "\t");
+				}
 				Console.WriteLine();
-            }
+			}
 		}
 	}
 }
