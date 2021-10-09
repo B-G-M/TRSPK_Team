@@ -4,50 +4,41 @@ namespace task_3_1
 {
 	class Program
 	{
-		static void Main(string[] args)
-		{
-			int a, b, up, down;
-			a = Convert.ToInt32(Console.ReadLine()); // кол-во измерений (cтолбцов)
-			b = Convert.ToInt32(Console.ReadLine()); // кол-во измерений (строк)
-			Console.WriteLine("Введите нижнюю границу: ");
-			down = Convert.ToInt32(Console.ReadLine());
-			Console.WriteLine("Введите верхнюю границу: ");
-			up = Convert.ToInt32(Console.ReadLine());
-
-			if (down > up)
+		public class Array1 {
+			static void Main(string[] args)
 			{
-				Console.WriteLine("Нижняя граница больше верхней ");
-				int temp = 0;
-				temp = down;
-				down = up;
-				up = temp;
-			}
+				int up, down;
+				Console.WriteLine("Введите нижнюю границу: ");
+				down = Convert.ToInt32(Console.ReadLine());
+				Console.WriteLine("Введите верхнюю границу: ");
+				up = Convert.ToInt32(Console.ReadLine());
 
-			int[,] myArr = new int[a, b];
-			Random random = new Random();
-
-			for (int i = 0; i < a; i++)
-			{
-				for (int j = 0; j < b; j++)
+				if (down > up)
 				{
-					myArr[i, j] = random.Next(down, up);
+					Console.WriteLine("Нижняя граница больше верхней ");
+					int temp = 0;
+					temp = down;
+					down = up;
+					up = temp;
+				}
+				Random random = new Random();
+				int[] lengthsArray = new int[2] {1,5};
+				int[] boundsArray = new int[2] {1,5};
+				Array myArray = Array.CreateInstance(typeof(int), lengthsArray, boundsArray);
+				for (int i = myArray.GetLowerBound(down); i <= myArray.GetUpperBound(up); i++)
+				{
+					for (int j = myArray.GetLowerBound(down); j <= myArray.GetUpperBound(up); j++)
+					{
+						
+
+
+					}
+				}
+
+				Console.WriteLine("Нижняя граница: " + down);
+				Console.WriteLine("Верхняя граница: " + up);	
 				}
 			}
-
-			Console.WriteLine("Кол-во столбцов: " + a);
-			Console.WriteLine("Кол-во строк: " + b);
-			Console.WriteLine("Нижняя граница: " + down);
-			Console.WriteLine("Верхняя граница: " + up);
-
-
-			for (int i = 0; i < a; i++)
-			{
-				for (int j = 0; j < b; j++)
-				{
-					Console.Write(myArr[i, j] + "\t");
-				}
-				Console.WriteLine();
-			}
-		}
+	
 	}
 }
