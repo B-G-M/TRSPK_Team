@@ -14,14 +14,14 @@ namespace Task4
                 Random rd = new();
                 for (int i = 0; i < numbers.Length; i++)
                 {
-                    numbers[i] = rd.Next(-100,100);
+                    numbers[i] = rd.Next(-100, 100);
                 }
             }
             public NumberArray(NumberArray numberArray)
             {
                 numbers = numberArray.numbers;
             }
-         
+
             int[] numbers = new int[20];
 
 
@@ -59,12 +59,12 @@ namespace Task4
             }
 
             public void DelegateSort(SortDelegate sortDelegate)
-            {   
+            {
                 if (sortDelegate != null)
                 {
                     sortDelegate(this);
                 }
-            }   
+            }
 
             public static void Sort1(NumberArray number) //bubblesort 
             {
@@ -118,12 +118,12 @@ namespace Task4
             SortDelegate sortD2 = new(NumberArray.Sort2);
             Console.Write("1 - пузырьковая сортировка, 2 - сортировка вставками: ");
             b = Int32.Parse(Console.ReadLine());
-            if(b == 1)
+            if (b == 1)
             {
                 sortD1(a);
                 Console.WriteLine("Пузырьковая сортировка : ");
             }
-            else if(b == 2)
+            else if (b == 2)
             {
                 sortD2(a);
                 Console.WriteLine("Cортировка вставками : ");

@@ -53,6 +53,10 @@ namespace task_4_5
 			StreamWriter sw = new StreamWriter("C:\\Users\\Савва\\Desktop\\log.txt");
 			public void print(char key)
 			{
+				if (!File.Exists("C:\\Users\\User\\Desktop\\log.txt"))
+				{
+					File.Create("C:\\Users\\User\\Desktop\\log.txt");
+				}
 				if (key == '`' || key == 'ё')
 				{
 					sw.Close();
