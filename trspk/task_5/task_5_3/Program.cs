@@ -10,6 +10,8 @@ namespace _5_3
         {
             Console.WriteLine("Введите исходный текст : ");
             string str = Console.ReadLine();
+
+
             
             Encoding eUTF8 = Encoding.UTF8;
             Byte[] arr = eUTF8.GetBytes(str);
@@ -20,12 +22,19 @@ namespace _5_3
             Encoding ascii = Encoding.ASCII;
             Byte[] arr2 = ascii.GetBytes(str);
 
-            string path = @"C:\Users\user\Desktop\1.txt";
+            Encoding iso = Encoding.GetEncoding(28591); //ISO-8859-1
+            Byte[] arr3 = iso.GetBytes(str);
+
+            Encoding unicode = Encoding.Unicode; 
+            Byte[] arr4 = iso.GetBytes(str);
+
+
+            string path = @"C:\Users\Савва\Desktop\1.txt";
             
             using (StreamWriter fl = new StreamWriter(path))
             {
                 Console.WriteLine("Исходный текст : ");
-                fl.WriteLine(str);
+                fl.WriteLine(str);             
 
                 fl.Write("UTF-8 : ");
                 foreach (Byte b in arr)
@@ -47,6 +56,14 @@ namespace _5_3
                     fl.Write("[{0}]", b);
                 }
                 fl.WriteLine("\n");
+
+                fl.Write("ISO-8859-1 : ");
+                foreach (Byte b in arr3)
+                {
+                    fl.Write("[{0}]", b);
+                }
+                fl.WriteLine("\n");
+ 
             }
 
             using (StreamReader reader = new StreamReader(path))
