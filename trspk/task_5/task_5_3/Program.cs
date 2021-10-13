@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Text;
 
 namespace task_5_3
 {
@@ -8,8 +10,6 @@ namespace task_5_3
         {
             Console.WriteLine("Введите исходный текст : ");
             string str = Console.ReadLine();
-
-
 
             Encoding eUTF8 = Encoding.UTF8;
             Byte[] arr = eUTF8.GetBytes(str);
@@ -23,11 +23,7 @@ namespace task_5_3
             Encoding iso = Encoding.GetEncoding(28591); //ISO-8859-1
             Byte[] arr3 = iso.GetBytes(str);
 
-            Encoding unicode = Encoding.Unicode;
-            Byte[] arr4 = iso.GetBytes(str);
-
-
-            string path = @"C:\Users\Савва\Desktop\1.txt";
+            string path = @"C:\Users\User\Desktop\1.txt";
 
             using (StreamWriter fl = new StreamWriter(path))
             {

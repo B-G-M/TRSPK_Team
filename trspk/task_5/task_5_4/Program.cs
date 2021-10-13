@@ -27,7 +27,7 @@ namespace task_5_4
 
 			start = DateTime.Now;
 			StringBuilder sbFor = new();
-			for (int i = 0; i < 10000; i++)
+			for (int i = 0; i < 100000; i++)
 			{
 				sbFor.Append(i);
 			}
@@ -37,7 +37,7 @@ namespace task_5_4
 
 			start = DateTime.Now;
 			string strFor = "";
-			for (int i = 0; i < 10000; i++)
+			for (int i = 0; i < 100000; i++)
 			{
 				strFor += i;
 			}
