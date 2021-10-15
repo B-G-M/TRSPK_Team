@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace task_6_2
 {
-
-    public class ValidateInt32Attribute
+	[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
+	public class ValidateInt32Attribute : Attribute
     {
         private int minValue;
         private int maxValue;
