@@ -1,0 +1,16 @@
+D:\TRSPK_Team\trspk\task_6\task_6_2\bin\Debug\net5.0\task_6_2.exe
+D:\TRSPK_Team\trspk\task_6\task_6_2\bin\Debug\net5.0\task_6_2.deps.json
+D:\TRSPK_Team\trspk\task_6\task_6_2\bin\Debug\net5.0\task_6_2.runtimeconfig.json
+D:\TRSPK_Team\trspk\task_6\task_6_2\bin\Debug\net5.0\task_6_2.runtimeconfig.dev.json
+D:\TRSPK_Team\trspk\task_6\task_6_2\bin\Debug\net5.0\task_6_2.dll
+D:\TRSPK_Team\trspk\task_6\task_6_2\bin\Debug\net5.0\ref\task_6_2.dll
+D:\TRSPK_Team\trspk\task_6\task_6_2\bin\Debug\net5.0\task_6_2.pdb
+D:\TRSPK_Team\trspk\task_6\task_6_2\obj\Debug\net5.0\task_6_2.GeneratedMSBuildEditorConfig.editorconfig
+D:\TRSPK_Team\trspk\task_6\task_6_2\obj\Debug\net5.0\task_6_2.AssemblyInfoInputs.cache
+D:\TRSPK_Team\trspk\task_6\task_6_2\obj\Debug\net5.0\task_6_2.AssemblyInfo.cs
+D:\TRSPK_Team\trspk\task_6\task_6_2\obj\Debug\net5.0\task_6_2.csproj.CoreCompileInputs.cache
+D:\TRSPK_Team\trspk\task_6\task_6_2\obj\Debug\net5.0\task_6_2.dll
+D:\TRSPK_Team\trspk\task_6\task_6_2\obj\Debug\net5.0\ref\task_6_2.dll
+D:\TRSPK_Team\trspk\task_6\task_6_2\obj\Debug\net5.0\task_6_2.pdb
+D:\TRSPK_Team\trspk\task_6\task_6_2\obj\Debug\net5.0\task_6_2.genruntimeconfig.cache
+D:\TRSPK_Team\trspk\task_6\task_6_2\obj\Debug\net5.0\task_6_2.csproj.AssemblyReference.cache
