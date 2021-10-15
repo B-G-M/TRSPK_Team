@@ -1,0 +1,16 @@
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\task_3\task_3_1\bin\Debug\net5.0\task_3_1.exe
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\task_3\task_3_1\bin\Debug\net5.0\task_3_1.deps.json
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\task_3\task_3_1\bin\Debug\net5.0\task_3_1.runtimeconfig.json
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\task_3\task_3_1\bin\Debug\net5.0\task_3_1.runtimeconfig.dev.json
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\task_3\task_3_1\bin\Debug\net5.0\task_3_1.dll
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\task_3\task_3_1\bin\Debug\net5.0\ref\task_3_1.dll
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\task_3\task_3_1\bin\Debug\net5.0\task_3_1.pdb
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\task_3\task_3_1\obj\Debug\net5.0\task_3_1.csproj.AssemblyReference.cache
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\task_3\task_3_1\obj\Debug\net5.0\task_3_1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\task_3\task_3_1\obj\Debug\net5.0\task_3_1.AssemblyInfoInputs.cache
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\task_3\task_3_1\obj\Debug\net5.0\task_3_1.AssemblyInfo.cs
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\task_3\task_3_1\obj\Debug\net5.0\task_3_1.csproj.CoreCompileInputs.cache
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\task_3\task_3_1\obj\Debug\net5.0\task_3_1.dll
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\task_3\task_3_1\obj\Debug\net5.0\ref\task_3_1.dll
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\task_3\task_3_1\obj\Debug\net5.0\task_3_1.pdb
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\task_3\task_3_1\obj\Debug\net5.0\task_3_1.genruntimeconfig.cache
