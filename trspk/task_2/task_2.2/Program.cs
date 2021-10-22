@@ -5,10 +5,10 @@ namespace task2_2
 {
 	class LongNumber
 	{
-		public LongNumber()
-		{
-			number = "";
-		}
+		//public LongNumber()
+		//{
+		//	number = "";
+		//}
 		public LongNumber(string num)
 		{
 			number = num;

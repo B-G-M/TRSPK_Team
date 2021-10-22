@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Савва\\Documents\\GitHub\\TRSPK_Team\\trspk\\task_5\\task_5_2\\task_5_2.csproj": {}
+    "D:\\TRSPK_Team\\trspk\\task_5\\task_5_2\\task_5_2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Савва\\Documents\\GitHub\\TRSPK_Team\\trspk\\task_5\\task_5_2\\task_5_2.csproj": {
+    "D:\\TRSPK_Team\\trspk\\task_5\\task_5_2\\task_5_2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Савва\\Documents\\GitHub\\TRSPK_Team\\trspk\\task_5\\task_5_2\\task_5_2.csproj",
+        "projectUniqueName": "D:\\TRSPK_Team\\trspk\\task_5\\task_5_2\\task_5_2.csproj",
         "projectName": "task_5_2",
-        "projectPath": "C:\\Users\\Савва\\Documents\\GitHub\\TRSPK_Team\\trspk\\task_5\\task_5_2\\task_5_2.csproj",
-        "packagesPath": "C:\\Users\\Савва\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Савва\\Documents\\GitHub\\TRSPK_Team\\trspk\\task_5\\task_5_2\\obj\\",
+        "projectPath": "D:\\TRSPK_Team\\trspk\\task_5\\task_5_2\\task_5_2.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\TRSPK_Team\\trspk\\task_5\\task_5_2\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Савва\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

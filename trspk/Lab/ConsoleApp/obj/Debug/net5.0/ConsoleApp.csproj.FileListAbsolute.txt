@@ -1,0 +1,16 @@
+D:\TRSPK_Team\trspk\Lab\ConsoleApp\bin\Debug\net5.0\ConsoleApp.exe
+D:\TRSPK_Team\trspk\Lab\ConsoleApp\bin\Debug\net5.0\ConsoleApp.deps.json
+D:\TRSPK_Team\trspk\Lab\ConsoleApp\bin\Debug\net5.0\ConsoleApp.runtimeconfig.json
+D:\TRSPK_Team\trspk\Lab\ConsoleApp\bin\Debug\net5.0\ConsoleApp.runtimeconfig.dev.json
+D:\TRSPK_Team\trspk\Lab\ConsoleApp\bin\Debug\net5.0\ConsoleApp.dll
+D:\TRSPK_Team\trspk\Lab\ConsoleApp\bin\Debug\net5.0\ref\ConsoleApp.dll
+D:\TRSPK_Team\trspk\Lab\ConsoleApp\bin\Debug\net5.0\ConsoleApp.pdb
+D:\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Debug\net5.0\ConsoleApp.csproj.AssemblyReference.cache
+D:\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Debug\net5.0\ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Debug\net5.0\ConsoleApp.AssemblyInfoInputs.cache
+D:\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Debug\net5.0\ConsoleApp.AssemblyInfo.cs
+D:\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Debug\net5.0\ConsoleApp.csproj.CoreCompileInputs.cache
+D:\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Debug\net5.0\ConsoleApp.dll
+D:\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Debug\net5.0\ref\ConsoleApp.dll
+D:\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Debug\net5.0\ConsoleApp.pdb
+D:\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Debug\net5.0\ConsoleApp.genruntimeconfig.cache
