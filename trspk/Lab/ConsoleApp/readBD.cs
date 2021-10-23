@@ -28,6 +28,8 @@ namespace ConsoleApp
 				strArr[i] = str;
 				i++;
 			}
+			cList.Add(strArr);
+			sw.Close();
 
 			return cList;
 		}
@@ -54,6 +56,7 @@ namespace ConsoleApp
 				i++;
 			}
 			pList.Add(strArr);
+			sw.Close();
 
 			return pList;
 		}

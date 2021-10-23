@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,27 @@ namespace ConsoleApp
 
 	class Logic
 	{
-		List<Product> products = Product.GetProducts(ReadBD.ProductList());
-		List<Client> clients = Client.GetClient(ReadBD.ClientList());
+		public Logic()
+		{
+			products = Product.GetProducts(ReadBD.ProductList());
+			clients = Client.GetClient(ReadBD.ClientList());
+		}
 
-		double NeedToPay(DateTime date)
+		private List<Product> products;
+
+		public List<Product> Products
+		{
+			get => products;
+		}
+
+		private List<Client> clients;
+
+		public List<Client> Clients
+		{
+			get => clients;
+		}
+
+		public double NeedToPay(DateTime date)
 		{
 			double needPay = 0;
 
@@ -35,7 +53,7 @@ namespace ConsoleApp
 			return needPay;
 		}
 
-		double[] VolumeOfDeposits()
+		public double[] VolumeOfDeposits()
 		{
 			int count = 0;
 			double[] apm = new double[12];
@@ -61,7 +79,7 @@ namespace ConsoleApp
 			return apm;
 		}
 
-		List<double> ProductsProfit()
+		public List<double> ProductsProfit()
 		{
 			List<double> profit = new();
 			double temp;
@@ -78,14 +96,50 @@ namespace ConsoleApp
 							continue;
 						}
 						profit.Add(client.Sum * Math.Pow((1 + product.Percent 
-							* client.Term * 30 / 365 / 100), product.Capital));
+							* client.Term * 30 / 365 / 100), client.Term/ (12/product.Capital)));
 
 					}
 				}
 			}
-
 			return profit;
 		}
 
+		public void AddClient()
+		{
+			Client client = new Client();
+			string str;
+			Console.WriteLine("Введите данные клиента:\n ФИО: ");
+			str =Convert.ToString(Console.Read());
+			client.FullName = str;
+			Console.WriteLine("Тип вклада: ");
+			str = Convert.ToString(Console.Read());
+			client.TypeContribution = str;
+			Console.WriteLine("Сумма вклада: ");
+			str = Convert.ToString(Console.Read());
+			client.Sum = double.Parse(str);
+			Console.WriteLine("Дата вклада: ");
+			client.Date = DateTime.Parse(str);
+			Console.WriteLine("Срок вклада: ");
+			client.Term = int.Parse(str);
+			
+			clients.Add(client);
+		}
+
+		public void UpdBase()
+		{
+			File.Exists("clients.txt");
+			string path = "clients.txt";
+			bool boo = false;
+			File.WriteAllText(path,String.Empty);
+			foreach (var client in clients)
+			{
+				File.AppendAllText(path, client.FullName +'\n');
+				File.AppendAllText(path, "Тип вклада = " + client.TypeContribution+'\n');
+				File.AppendAllText(path, "Сумма = " + client.Sum+'\n');
+				File.AppendAllText(path, "Дата = " + client.Date+'\n');
+				File.AppendAllText(path, "Срок = " + client.Term+'\n');
+				File.AppendAllText(path, "\n");
+			}
+		}
 	}
 }
