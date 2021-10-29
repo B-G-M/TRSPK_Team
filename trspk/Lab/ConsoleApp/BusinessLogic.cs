@@ -104,9 +104,9 @@ namespace ConsoleApp
 			return profit;
 		}
 
-		public void AddClient()
+		public void AddClient(Client client)
 		{
-			dataLogic.AddClient();
+			dataLogic.AddClient(client);
 		}
 
 		public void ShowClients()

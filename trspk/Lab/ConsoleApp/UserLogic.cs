@@ -54,6 +54,7 @@ namespace ConsoleApp
 						continue;
 
 					case 5:
+						
 						int k = 0;
 						Console.Write("Введите номер клиента: ");
 						int number;
@@ -74,9 +75,29 @@ namespace ConsoleApp
 						}
 						continue;
 
-					case 6: 
-						logic.AddClient();
+					case 6:
+					{
+						Client client = new Client();
+
+						Console.WriteLine("Введите данные клиента:\n ФИО: ");
+						str = Convert.ToString(Console.ReadLine());
+						client.FullName = str;
+						Console.WriteLine("Тип вклада: ");
+						str = Convert.ToString(Console.ReadLine());
+						client.TypeContribution = str;
+						Console.WriteLine("Сумма вклада: ");
+						str = Convert.ToString(Console.ReadLine());
+						client.Sum = double.Parse(str);
+						Console.WriteLine("Дата вклада: ");
+						str = Convert.ToString(Console.ReadLine());
+						client.Date = DateTime.Parse(str);
+						Console.WriteLine("Срок вклада: ");
+						str = Convert.ToString(Console.ReadLine());
+						client.Term = int.Parse(str);
+
+						logic.AddClient(client);
 						continue;
+					}
 					default:
 						continue;
 

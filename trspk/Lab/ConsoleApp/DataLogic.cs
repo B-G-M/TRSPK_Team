@@ -78,26 +78,25 @@ namespace ConsoleApp
 			return pList;
 		}
 
-		public void AddClient()
+		public void AddClient(Client client)
 		{
-			Client client = new Client();
-			string str;
-			Console.WriteLine("Введите данные клиента:\n ФИО: ");
-			str = Convert.ToString(Console.ReadLine());
-			client.FullName = str;
-			Console.WriteLine("Тип вклада: ");
-			str = Convert.ToString(Console.ReadLine());
-			client.TypeContribution = str;
-			Console.WriteLine("Сумма вклада: ");
-			str = Convert.ToString(Console.ReadLine());
-			client.Sum = double.Parse(str);
-			Console.WriteLine("Дата вклада: ");
-			str = Convert.ToString(Console.ReadLine());
-			client.Date = DateTime.Parse(str);
-			Console.WriteLine("Срок вклада: ");
-			str = Convert.ToString(Console.ReadLine());
-			client.Term = int.Parse(str);
-
+			//Client client = new Client();
+			//string str;
+			//Console.WriteLine("Введите данные клиента:\n ФИО: ");
+			//str = Convert.ToString(Console.ReadLine());
+			//client.FullName = str;
+			//Console.WriteLine("Тип вклада: ");
+			//str = Convert.ToString(Console.ReadLine());
+			//client.TypeContribution = str;
+			//Console.WriteLine("Сумма вклада: ");
+			//str = Convert.ToString(Console.ReadLine());
+			//client.Sum = double.Parse(str);
+			//Console.WriteLine("Дата вклада: ");
+			//str = Convert.ToString(Console.ReadLine());
+			//client.Date = DateTime.Parse(str);
+			//Console.WriteLine("Срок вклада: ");
+			//str = Convert.ToString(Console.ReadLine());
+			//client.Term = int.Parse(str);
 			clients.Add(client);
 			this.UpdBase();
 		}
