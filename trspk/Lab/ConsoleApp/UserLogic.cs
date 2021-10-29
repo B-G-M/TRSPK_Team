@@ -4,40 +4,34 @@ using System.Globalization;
 
 namespace ConsoleApp
 {
-	class Program
+	class UserLogic
 	{
 		static void Main(string[] args)
 		{
-			Logic logic = new Logic();
+			BusinessLogic logic = new BusinessLogic();
 			int num = -1;
 			while (num != 0)
 			{
 				Console.WriteLine("\n Меню:");
 				Console.WriteLine("0. Выход из программы.");
-				Console.WriteLine("1. Обновить данные из БД.");
-				Console.WriteLine("2. Подсчитать сумму денег, необходимую банку для выплаты по срочным вкладам в указанный месяц");
-				Console.WriteLine("3. Подсчитать объемы вкладов в среднем помесячно");
-				Console.WriteLine("4. Подсчитать доходность каждого продукта с учетом капитализации");
-				Console.WriteLine("5. Показать всю БД клиентов.");
-				Console.WriteLine("6. Показать информацию о клиенте.");
-				Console.WriteLine("7. Добавить клиента. ");
-				Console.WriteLine("8. Обновить БД.");
+				Console.WriteLine("1. Подсчитать сумму денег, необходимую банку для выплаты по срочным вкладам в указанный месяц");
+				Console.WriteLine("2. Подсчитать объемы вкладов в среднем помесячно");
+				Console.WriteLine("3. Подсчитать доходность каждого продукта с учетом капитализации");
+				Console.WriteLine("4. Показать всю БД клиентов.");
+				Console.WriteLine("5. Показать информацию о клиенте.");
+				Console.WriteLine("6. Добавить клиента. ");
 				num = int.Parse(Console.ReadLine());
 				Console.Clear();
 				switch (num)
 				{
 					case 1:
-						logic = new();
-						continue;
-					
-					case 2:
 						Console.Write("Введите нужную дату в формате дд.мм.гггг: ");
 						DateTime date = DateTime.Parse(Console.ReadLine());
 						Console.Write("Нужно заплатить: ");
 						Console.WriteLine(logic.NeedToPay(date));
 						continue;
 					
-					case 3:
+					case 2:
 						double[] volume = logic.VolumeOfDeposits();
 						for (int i = 0; i < 12; i++)
 						{
@@ -46,7 +40,7 @@ namespace ConsoleApp
 						}
 						continue;
 
-					case 4:
+					case 3:
 						List<double> profit = logic.ProductsProfit();
 						string str;
 						for (int i = 0; i < profit.Count; i++)
@@ -55,22 +49,12 @@ namespace ConsoleApp
 						}
 						continue;
 
-					case 5:
-						int k = 0;
-						foreach (var client in logic.Clients)
-						{
-							Console.WriteLine("Клиент №{0}:\n" +
-							                  "Имя: " + client.FullName + '\n' +
-											  "Тип вклада: " + client.TypeContribution + '\n' +
-							                  "Сумма вклада: " + client.Sum + '\n' +
-											  "Дата вклада: " + client.Date + '\n' +
-											  "Срок вклада: " + client.Term +'\n', k);
-							k++;
-						}
+					case 4:
+						logic.ShowClients();
 						continue;
 
-					case 6:
-						k = 0;
+					case 5:
+						int k = 0;
 						Console.Write("Введите номер клиента: ");
 						int number;
 						number = int.Parse(Console.ReadLine());
@@ -90,11 +74,8 @@ namespace ConsoleApp
 						}
 						continue;
 
-					case 7: 
+					case 6: 
 						logic.AddClient();
-						continue;
-					case 8:
-						logic.UpdBase();
 						continue;
 					default:
 						continue;

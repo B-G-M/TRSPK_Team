@@ -9,23 +9,23 @@ namespace ConsoleApp
 {
 
 
-	class Logic
+	class BusinessLogic
 	{
-		public Logic()
+		public BusinessLogic()
 		{
-			products = Product.GetProducts(ReadBD.ProductList());
-			clients = Client.GetClient(ReadBD.ClientList());
+			products = dataLogic.Products;
+			clients = dataLogic.Clients;
 		}
 
-		private List<Product> products;
+		private DataLogic dataLogic = new DataLogic();
 
+		private List<Product> products;
 		public List<Product> Products
 		{
 			get => products;
 		}
 
 		private List<Client> clients;
-
 		public List<Client> Clients
 		{
 			get => clients;
@@ -106,40 +106,12 @@ namespace ConsoleApp
 
 		public void AddClient()
 		{
-			Client client = new Client();
-			string str;
-			Console.WriteLine("Введите данные клиента:\n ФИО: ");
-			str =Convert.ToString(Console.Read());
-			client.FullName = str;
-			Console.WriteLine("Тип вклада: ");
-			str = Convert.ToString(Console.Read());
-			client.TypeContribution = str;
-			Console.WriteLine("Сумма вклада: ");
-			str = Convert.ToString(Console.Read());
-			client.Sum = double.Parse(str);
-			Console.WriteLine("Дата вклада: ");
-			client.Date = DateTime.Parse(str);
-			Console.WriteLine("Срок вклада: ");
-			client.Term = int.Parse(str);
-			
-			clients.Add(client);
+			dataLogic.AddClient();
 		}
 
-		public void UpdBase()
+		public void ShowClients()
 		{
-			File.Exists("clients.txt");
-			string path = "clients.txt";
-			bool boo = false;
-			File.WriteAllText(path,String.Empty);
-			foreach (var client in clients)
-			{
-				File.AppendAllText(path, client.FullName +'\n');
-				File.AppendAllText(path, "Тип вклада = " + client.TypeContribution+'\n');
-				File.AppendAllText(path, "Сумма = " + client.Sum+'\n');
-				File.AppendAllText(path, "Дата = " + client.Date+'\n');
-				File.AppendAllText(path, "Срок = " + client.Term+'\n');
-				File.AppendAllText(path, "\n");
-			}
+			dataLogic.ShowClients();
 		}
 	}
 }
