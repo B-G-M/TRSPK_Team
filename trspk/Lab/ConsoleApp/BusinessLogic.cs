@@ -113,5 +113,10 @@ namespace ConsoleApp
 		{
 			dataLogic.ShowClients();
 		}
+
+		public void DellClient(int number)
+		{
+			dataLogic.DellClient(number);
+		}
 	}
 }

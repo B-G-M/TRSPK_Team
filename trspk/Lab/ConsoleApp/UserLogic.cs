@@ -20,6 +20,7 @@ namespace ConsoleApp
 				Console.WriteLine("4. Показать всю БД клиентов.");
 				Console.WriteLine("5. Показать информацию о клиенте.");
 				Console.WriteLine("6. Добавить клиента. ");
+				Console.WriteLine("7. Удалить клиента. ");
 				num = int.Parse(Console.ReadLine());
 				Console.Clear();
 				switch (num)
@@ -106,6 +107,13 @@ namespace ConsoleApp
 						logic.AddClient(client);
 						continue;
 					}
+					case 7:
+						Console.WriteLine("Введите номер клиента: ");
+						number = int.Parse(Console.ReadLine());
+						logic.DellClient(number);
+						continue;
+
+
 					default:
 						continue;
 
