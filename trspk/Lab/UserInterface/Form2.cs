@@ -81,8 +81,8 @@ namespace UserInterface
             int i = 0;
             foreach (var client in profit)
             {
-                i++;
                 textBox4.Text += "Клиент №" + i + ": " + client + Environment.NewLine;
+                i++;
             }
         }
 

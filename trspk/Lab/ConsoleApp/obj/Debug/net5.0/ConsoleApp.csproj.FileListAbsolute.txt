@@ -29,3 +29,4 @@ C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Debug\n
 C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Debug\net5.0\ref\ConsoleApp.dll
 C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Debug\net5.0\ConsoleApp.pdb
 C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Debug\net5.0\ConsoleApp.genruntimeconfig.cache
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Debug\net5.0\ConsoleApp.csproj.AssemblyReference.cache
