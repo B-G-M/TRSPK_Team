@@ -4,7 +4,7 @@ using System.IO;
 
 namespace ConsoleApp
 {
-	class DataLogic
+	public class DataLogic
 	{
 		public DataLogic()
 		{

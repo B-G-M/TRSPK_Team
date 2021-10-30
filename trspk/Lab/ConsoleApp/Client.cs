@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
-	class Client
+	public class Client
 	{
 
 		private string fName;

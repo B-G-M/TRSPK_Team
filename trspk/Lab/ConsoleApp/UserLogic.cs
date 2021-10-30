@@ -4,7 +4,7 @@ using System.Globalization;
 
 namespace ConsoleApp
 {
-	class UserLogic
+	public class UserLogic
 	{
 		static void Main(string[] args)
 		{
@@ -35,8 +35,16 @@ namespace ConsoleApp
 						double[] volume = logic.VolumeOfDeposits();
 						for (int i = 0; i < 12; i++)
 						{
-							Console.WriteLine("{0}: {1} ",
-								CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(i+1),volume[i]);
+							if (!double.IsNaN(volume[i]))
+							{
+
+								Console.WriteLine("{0}: {1} ",
+								CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(i + 1), volume[i]);
+								continue;
+								
+							}
+							Console.WriteLine(CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(i + 1)
+												+ ": нет выплат в данном месяце \n");
 						}
 						continue;
 
@@ -64,7 +72,7 @@ namespace ConsoleApp
 							if (k == number)
 							{
 								Console.WriteLine("Клиент №{0}:\n" +
-								                  "Имя: " + client.FullName + '\n' +
+								                  "Фио: " + client.FullName + '\n' +
 												  "Тип вклада: " + client.TypeContribution + '\n' +
 								                  "Сумма вклада: " + client.Sum + '\n' +
 								                  "Дата вклада: " + client.Date + '\n' +

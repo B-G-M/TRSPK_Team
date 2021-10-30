@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
-	class Product
+	public class Product
 	{
 		private string kindC;
 		public string KindContribution

@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
-
-
-	class BusinessLogic
+	public class BusinessLogic
 	{
 		public BusinessLogic()
 		{
@@ -29,6 +27,10 @@ namespace ConsoleApp
 		public List<Client> Clients
 		{
 			get => clients;
+			set
+			{
+				clients = value;
+			}
 		}
 
 		public double NeedToPay(DateTime date)
@@ -55,7 +57,6 @@ namespace ConsoleApp
 
 		public double[] VolumeOfDeposits()
 		{
-			int count = 0;
 			double[] apm = new double[12];
 			int[] countDep = new int[12];
 			for (int i = 0; i < 12; i++)
@@ -82,7 +83,6 @@ namespace ConsoleApp
 		public List<double> ProductsProfit()
 		{
 			List<double> profit = new();
-			double temp;
 			foreach (var client in clients)
 			{
 				foreach (var product in products)

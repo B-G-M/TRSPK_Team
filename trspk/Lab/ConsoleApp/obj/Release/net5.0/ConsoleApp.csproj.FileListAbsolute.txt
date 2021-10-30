@@ -1,0 +1,16 @@
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\bin\Release\net5.0\ConsoleApp.exe
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\bin\Release\net5.0\ConsoleApp.deps.json
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\bin\Release\net5.0\ConsoleApp.runtimeconfig.json
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\bin\Release\net5.0\ConsoleApp.runtimeconfig.dev.json
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\bin\Release\net5.0\ConsoleApp.dll
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\bin\Release\net5.0\ref\ConsoleApp.dll
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\bin\Release\net5.0\ConsoleApp.pdb
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Release\net5.0\ConsoleApp.csproj.AssemblyReference.cache
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Release\net5.0\ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Release\net5.0\ConsoleApp.AssemblyInfoInputs.cache
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Release\net5.0\ConsoleApp.AssemblyInfo.cs
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Release\net5.0\ConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Release\net5.0\ConsoleApp.dll
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Release\net5.0\ref\ConsoleApp.dll
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Release\net5.0\ConsoleApp.pdb
+C:\Users\Савва\Documents\GitHub\TRSPK_Team\trspk\Lab\ConsoleApp\obj\Release\net5.0\ConsoleApp.genruntimeconfig.cache
