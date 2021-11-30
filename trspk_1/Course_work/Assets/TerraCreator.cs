@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class TerraCreator : MonoBehaviour
 {
-	public float mHeight = 0.0f;
-	public float mWidth = 10.0f;
+	DiamondSquare diamondSquare = new DiamondSquare();
+	//public float mHeight = 0.0f;
+	public int n = 1;
+	private float mWidth;
 	public int quality = 10;
 
 	private void ConstructQuadForMesh(MeshCreator meshCreator, Vector3 position,Vector2 uv,
@@ -33,7 +35,7 @@ public class TerraCreator : MonoBehaviour
 	private void Start()
 	{
 		MeshCreator meshCreator = new MeshCreator();
-
+		mWidth = (float)Math.Pow(2, n) + 1;
 		float scale = mWidth / quality;//размер сегментов
 
 		Matrix4x4 meshTransform = transform.localToWorldMatrix;
@@ -58,7 +60,8 @@ public class TerraCreator : MonoBehaviour
 				ConstructQuadForMesh(meshCreator, offset, uv, buildTriangles, quality + 1);
 			}
 		}
-
+		diamondSquare.TerraForm(meshCreator,n);
+		//diamondSquare.TerraForm(meshCreator, n);
 		Mesh mesh = meshCreator.GetMesh();
 
 		MeshFilter filter = GetComponent<MeshFilter>();
