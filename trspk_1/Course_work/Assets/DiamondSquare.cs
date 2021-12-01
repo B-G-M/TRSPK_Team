@@ -7,95 +7,95 @@ using System;
 //This is really crucial step! Be adviced to not remove it, even if don't believer.
 //Rahman ve Rehim olan Allan'in in adiyla
 
+public class IJ
+{
+	public IJ(int I, int J)
+	{
+		i = I;
+		j = J;
+	}
+	public int i;
+	public int j;
+}
+
+
 
 public class DiamondSquare : MonoBehaviour
 {
-	public float upperRange = 0.1f;
+	public float upperRange = 10.0f;
 	private float lowerRange = 0.01f;
 	public float roughness = 0.01f;
 	private float outOfBoundsH;
+	private int twoPow = 1;
 
-	public void TerraForm(MeshCreator meshCreator,int n)
+	private float unit;
+	private float[,] heightMap;
+
+	public void TerraForm(ref float[,] heightMap)
 	{
-		int stop = (int)Math.Pow(2, n);
-		int rightBorder = (meshCreator.Vertices.Count - 1) / 2;
-		int ochenNuznayaXyeta = 1; //Правда очень нужная хуета
-		while (ochenNuznayaXyeta <= rightBorder)
-			ochenNuznayaXyeta *= 2;
-		ochenNuznayaXyeta /= 2;
 
-		Square(meshCreator, 0, meshCreator.Vertices.Count - 1, meshCreator.Vertices.Count - 1, ochenNuznayaXyeta, stop);
 	}
 
-	private void Diamond(MeshCreator meshCreator, int start, int finish, int lenght, int twoPow, int stop)
+	private void Diamond(IJ[] square, int lenght)
 	{
-		int[] square = new int[4];//массив индексов углов квадрата
-		square[0] = start;
-		square[1] = start + lenght;
-		square[2] = finish - lenght;
-		square[3] = finish;
-
-		int center = (start + finish) / 2;
-
-		//float halfLenght = segmentLength(meshCreator.Vertices[square[0]], meshCreator.Vertices[square[1]]);//центр стороны квадрата
-		float diagonal = segmentLength(meshCreator.Vertices[square[0]], meshCreator.Vertices[square[3]]);//длина диагонали
-
-		float height = ((meshCreator.Vertices[square[0]].y + meshCreator.Vertices[square[1]].y + 
-			meshCreator.Vertices[square[2]].y + meshCreator.Vertices[square[3]].y) / 4) +
-			UnityEngine.Random.Range(-roughness * diagonal, roughness * diagonal);//вычисление высоты точки
-		
-		meshCreator.Vertices[center] = new Vector3(meshCreator.Vertices[center].x, height, meshCreator.Vertices[center].z);
-
-
-		if (twoPow == stop)
-			return;
-
-		Square(meshCreator, square[0], center, lenght, twoPow / 2, stop);
-		Square(meshCreator, square[1], center, lenght, twoPow / 2, stop);
-		Square(meshCreator, center, square[2], lenght, twoPow / 2, stop);
-		Square(meshCreator, center, square[3], lenght, twoPow / 2, stop);
+		IJ center = new IJ((square[0].i + square[2].i) / 2, (square[0].j + square[2].j) / 2);
 	}
 
-	public void Square(MeshCreator meshCreator, int start, int finish, int lenghtOld,int twoPow, int stop)
+	public void Square(IJ start, IJ finish, int lenghtOld)
 	{
 		int lenght = Convert.ToInt32(Math.Sqrt(lenghtOld));//длина стороны квадрата
-		float randNum;
+		IJ[] square = new IJ[4];
+		int type;
 
-		int[] square = new int[4];//массив индексов углов квадрата
-
-		if (start + twoPow == finish)
+		if (start.i > finish.i)
 		{
-			start -= lenght;
-			finish += lenght;
+			if (start.j < finish.j)
+				type = 3;
+			else
+				type = 0;
 		}
-		square[0] = start;
-		square[1] = start + lenght;
-		square[2] = finish - lenght;
-		square[3] = finish;
-
-		foreach (int index in square)//задаем случайные высоты углам 
+		else
 		{
-			if (meshCreator.Vertices[index].y != 0.0f)
-				continue;
-			randNum = UnityEngine.Random.Range(lowerRange, upperRange);//гененрируем случайную высоту угла
+			if (start.j < finish.j)
+				type = 2;
 
-			meshCreator.Vertices[index] = new Vector3(meshCreator.Vertices[index].x, randNum, meshCreator.Vertices[index].z);//изменяем высоту точки
+			else
+				type = 1;
+		}
+		if (type == 1 || type == 3)
+		{
+			square[0] = start;
+			square[1] = new IJ(start.i, finish.j);
+			square[2] = finish;
+			square[3] = new IJ(finish.i, start.j);
+		}
+		else
+		{
+			square[0] = start;
+			square[1] = new IJ(finish.i, start.j);
+			square[2] = finish;
+			square[3] = new IJ(start.i, finish.j);
 		}
 
-		Diamond(meshCreator, square[0], square[3], lenght, twoPow, stop);
 	}
 
-	private float segmentLength(Vector3 point1, Vector3 point2)//вычисление растояния между точками
+	private float segmentLength(IJ start, IJ finish)//вычисление растояния между точками
 	{
-		double segmentLength = Math.Pow((point1.x - point2.x), 2) + Math.Pow((point1.y - point2.y), 2);
+		double segmentLength = Math.Pow((start.i* unit - finish.i*unit), 2) + Math.Pow((start.j * unit - finish.j * unit), 2);
 		return (float)Math.Sqrt(segmentLength);
 	}
 
-	//private void Start()
-	//{
-	//	outOfBoundsH = upperRange / 2 * UnityEngine.Random.Range(lowerRange, upperRange);
-	//}
+	public void Start(int N,float unit)
+	{
+		this.unit = unit;
+		int mapRang = (int)Math.Pow(2, N) + 1;
+		float[,] heightMap = new float[mapRang, mapRang];
 
+		while (twoPow <= (heightMap.Length - 1) / 2)//количество итераций
+			twoPow *= 2;
+		twoPow /= 2;
+
+	}
 
 }
 //بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ

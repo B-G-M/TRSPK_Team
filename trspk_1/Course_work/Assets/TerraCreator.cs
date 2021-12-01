@@ -31,7 +31,6 @@ public class TerraCreator : MonoBehaviour
 		
 	}
 
-
 	private void Start()
 	{
 		MeshCreator meshCreator = new MeshCreator();
@@ -60,8 +59,7 @@ public class TerraCreator : MonoBehaviour
 				ConstructQuadForMesh(meshCreator, offset, uv, buildTriangles, quality + 1);
 			}
 		}
-		diamondSquare.TerraForm(meshCreator,n);
-		//diamondSquare.TerraForm(meshCreator, n);
+		//diamondSquare.TerraForm(meshCreator,n);
 		Mesh mesh = meshCreator.GetMesh();
 
 		MeshFilter filter = GetComponent<MeshFilter>();
