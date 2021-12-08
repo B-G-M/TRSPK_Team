@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System;
+using UnityEngine;
 public class TerraCreator : MonoBehaviour
 {
 	DiamondSquare diamondSquare = new DiamondSquare();
 	//public float mHeight = 0.0f;
-	public int n = 1;
+	public int n = 2;
 	private float mWidth;
 	public int quality = 10;
 
-	private void ConstructQuadForMesh(MeshCreator meshCreator, Vector3 position,Vector2 uv,
+	private void ConstructQuadForMesh(MeshCreator meshCreator, Vector3 position, Vector2 uv,
 		bool buildTriangles, int vertsPerRow)
 	{
 		meshCreator.Vertices.Add(position);
@@ -31,15 +29,15 @@ public class TerraCreator : MonoBehaviour
 		
 	}
 
+
 	private void Start()
 	{
 		MeshCreator meshCreator = new MeshCreator();
 		mWidth = (float)Math.Pow(2, n) + 1;
 		float scale = mWidth / quality;//размер сегментов
-
+		diamondSquare.Nachalo((quality + 1) * (quality + 1), scale);
 		Matrix4x4 meshTransform = transform.localToWorldMatrix;
 
-		float y = 0.0f;
 		for (int i = 0; i <= quality; i++)
 		{
 			float z = scale * i;
@@ -49,7 +47,10 @@ public class TerraCreator : MonoBehaviour
 			{
 				float x = scale * j;
 				float u = (1.0f / quality) * j;
-				
+				float y = diamondSquare.GetY(i, j);
+
+				meshCreator.colors.Add(diamondSquare.GetColor(y));
+
 				Vector3 offset = new Vector3(x, y, z);
 
 				Vector2 uv = new Vector2(u, v);
@@ -59,12 +60,12 @@ public class TerraCreator : MonoBehaviour
 				ConstructQuadForMesh(meshCreator, offset, uv, buildTriangles, quality + 1);
 			}
 		}
-		//diamondSquare.TerraForm(meshCreator,n);
+
 		Mesh mesh = meshCreator.GetMesh();
 
 		MeshFilter filter = GetComponent<MeshFilter>();
 
-		if(filter != null)
+		if (filter != null)
 			filter.sharedMesh = mesh;
 	}
 }

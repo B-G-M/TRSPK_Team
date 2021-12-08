@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using System;
+//using System;
 
 //Here, code praying to the GOD for protecting our open file from all bugs and other things.
 //This is really crucial step! Be adviced to not remove it, even if don't believer.
@@ -14,87 +13,279 @@ public class IJ
 		i = I;
 		j = J;
 	}
-	public int i;
-	public int j;
-}
 
+	public int i { get; set; }
+	public int j { get; set; }
+}
 
 
 public class DiamondSquare : MonoBehaviour
 {
 	public float upperRange = 10.0f;
-	private float lowerRange = 0.01f;
-	public float roughness = 0.01f;
+	private float lowerRange = 1f;
+	public float roughness = 0.25f;
 	private float outOfBoundsH;
-	private int twoPow = 1;
+	private int fourPow = 0;
+	private int mapRang;
+
+	private int wet;
+	private float maxY = 0;
+	private float minY = 0;
 
 	private float unit;
+	private int step;
+	private int aslant;
 	private float[,] heightMap;
 
-	public void TerraForm(ref float[,] heightMap)
-	{
+	private List<IJ[]> waitingDot = new List<IJ[]>();
 
+	private List<IJ> diamond = new List<IJ>();
+
+	private Color32[,] colorsArr;
+
+	public float GetY(int i, int j)
+	{
+		return heightMap[i, j];
+	}
+	public Color32 GetColor(float Y)
+	{
+		int stepColor = (int)maxY / 4;
+		float y = Y;
+		if (Y < 0)
+			return new Color32(4, 99, 255, 50);
+
+		int index = (int)(y / stepColor);
+
+		if (index == 4)
+		{
+			return colorsArr[index - 1, wet];
+		}
+		return colorsArr[index, wet];
+
+
+		
 	}
 
-	private void Diamond(IJ[] square, int lenght)
+	public void TerraForm()
 	{
-		IJ center = new IJ((square[0].i + square[2].i) / 2, (square[0].j + square[2].j) / 2);
-	}
+		colorsArr = new Color32[4,6];
+		colorsArr[0,0] = new Color32(233, 221, 199, 255);
+		colorsArr[0,1] = new Color32(196, 212, 170, 255);
+		colorsArr[0,2] = new Color32(169, 204, 164, 255);
+		colorsArr[0,3] = new Color32(169, 204, 164, 255);
+		colorsArr[0,4] = new Color32(156, 187, 169, 255);
+		colorsArr[0,5] = new Color32(156, 187, 169, 255);
+		colorsArr[1,0] = new Color32(228, 232, 202, 255);
+		colorsArr[1,1] = new Color32(196, 212, 170, 255);
+		colorsArr[1,2] = new Color32(196, 212, 170, 255);
+		colorsArr[1,3] = new Color32(180, 201, 169, 255);
+		colorsArr[1,4] = new Color32(180, 201, 169, 255);
+		colorsArr[1,5] = new Color32(164, 196, 168, 255);
+		colorsArr[2,0] = new Color32(228, 232, 202, 255);
+		colorsArr[2,1] = new Color32(228, 232, 202, 255);
+		colorsArr[2,2] = new Color32(196, 204, 187, 255);
+		colorsArr[2,3] = new Color32(196, 204, 187, 255);
+		colorsArr[2,4] = new Color32(204, 212, 187, 255);
+		colorsArr[2,5] = new Color32(204, 212, 187, 255);
+		colorsArr[3,0] = new Color32(153, 153, 153, 255);
+		colorsArr[3,1] = new Color32(187, 187, 187, 255);
+		colorsArr[3,2] = new Color32(221, 221, 187, 255);
+		colorsArr[3,3] = new Color32(248, 248, 248, 255);
+		colorsArr[3,4] = new Color32(252, 252, 252, 255);
+		colorsArr[3,5] = new Color32(255, 255, 255, 255);
 
-	public void Square(IJ start, IJ finish, int lenghtOld)
-	{
-		int lenght = Convert.ToInt32(Math.Sqrt(lenghtOld));//длина стороны квадрата
+		wet = UnityEngine.Random.Range(0, 6);
+
+		IJ start = new IJ(0, 0);
+		IJ finish = new IJ(mapRang - 1, mapRang - 1);
+
 		IJ[] square = new IJ[4];
-		int type;
+		square[0] = start;
+		square[1] = new IJ(start.i, finish.j);
+		square[2] = new IJ(finish.i, start.j);
+		square[3] = finish;
+		waitingDot.Add(square);
 
-		if (start.i > finish.i)
-		{
-			if (start.j < finish.j)
-				type = 3;
-			else
-				type = 0;
-		}
-		else
-		{
-			if (start.j < finish.j)
-				type = 2;
+		step = (int)Mathf.Sqrt(heightMap.Length);
 
+		aslant = step;
+
+
+		//Задаем случайниые высоты углам
+		heightMap[start.i, start.j] = UnityEngine.Random.Range(lowerRange, upperRange);
+		heightMap[start.i, finish.j] = UnityEngine.Random.Range(lowerRange, upperRange);
+		heightMap[finish.i, finish.j] = UnityEngine.Random.Range(lowerRange, upperRange);
+		heightMap[finish.i, start.j] = UnityEngine.Random.Range(lowerRange, upperRange);
+
+		Diamond(square, true);
+	}
+
+	private void Diamond(IJ[] square, bool down)
+	{
+
+		diamond.Add(new IJ(square[0].i + aslant / 2, square[0].j + aslant / 2));//добавляем элемент место где ждут
+
+		heightMap[square[0].i + aslant / 2, square[0].j + aslant / 2] = GiveHeightSquare(square);//присваиваем значение
+
+		if (down)
+		{
+			aslant = step / 2;
+			step = aslant;
+			Square(diamond, true);
+		}
+	}
+
+	private void DiamondRhombus(IJ[] rhombus)
+	{
+		heightMap[rhombus[0].i, rhombus[0].j + aslant] = GiveHeightDiamond(rhombus);//присваиваем значение
+	}
+
+	public void Square(List<IJ> diamond, bool down)
+	{
+		int stepCount = (int)Mathf.Pow(4, fourPow);
+		fourPow++;
+
+		for (int i = 0; i < diamond.Count; i++)
+		{
+			IJ[] rhombuses = new IJ[4];//создаем массив ромбов для каждой точки
+			rhombuses[0] = new IJ(diamond[i].i, diamond[i].j - aslant);
+			rhombuses[1] = new IJ(diamond[i].i, diamond[i].j + aslant);
+			rhombuses[2] = new IJ(diamond[i].i + aslant, diamond[i].j);
+			rhombuses[3] = new IJ(diamond[i].i - aslant, diamond[i].j);
+
+			for (int j = 0; j < 4; j++)
+			{
+				IJ[] rhomb = new IJ[4];//определяем вершины ромбов
+				rhomb[0] = new IJ(rhombuses[j].i, rhombuses[j].j - aslant);
+				rhomb[1] = new IJ(rhombuses[j].i + aslant, rhombuses[j].j);
+				rhomb[2] = new IJ(rhombuses[j].i, rhombuses[j].j + aslant);
+				rhomb[3] = new IJ(rhombuses[j].i - aslant, rhombuses[j].j);
+				DiamondRhombus(rhomb);//Задаем высоту вершины
+			}
+		}
+
+		IJ[] square = new IJ[4];
+		List<IJ> amir = new List<IJ>(diamond);
+		diamond.Clear();
+
+		if (step == 1)
+			return;
+
+
+		//Создаем квадраты под следующие вызовы Diamond
+		for (int i = 0; i < amir.Count; i++)
+		{
+			square[0] = new IJ(amir[i].i, amir[i].j - aslant);
+			square[1] = new IJ(amir[i].i, amir[i].j);
+			square[2] = new IJ(amir[i].i + aslant, amir[i].j - aslant);
+			square[3] = new IJ(amir[i].i + aslant, amir[i].j);
+			Diamond(square, false);
+
+			square[0] = new IJ(amir[i].i, amir[i].j);
+			square[1] = new IJ(amir[i].i, amir[i].j + aslant);
+			square[2] = new IJ(amir[i].i + aslant, amir[i].j);
+			square[3] = new IJ(amir[i].i + aslant, amir[i].j + aslant);
+			Diamond(square, false);
+
+			square[0] = new IJ(amir[i].i - aslant, amir[i].j);
+			square[1] = new IJ(amir[i].i - aslant, amir[i].j + aslant);
+			square[2] = new IJ(amir[i].i, amir[i].j);
+			square[3] = new IJ(amir[i].i, amir[i].j + aslant);
+			Diamond(square, false);
+
+			square[0] = new IJ(amir[i].i - aslant, amir[i].j - aslant);
+			square[1] = new IJ(amir[i].i - aslant, amir[i].j);
+			square[2] = new IJ(amir[i].i, amir[i].j - aslant);
+			square[3] = new IJ(amir[i].i, amir[i].j);
+			if (i + 1 == amir.Count)
+				Diamond(square, true);
 			else
-				type = 1;
-		}
-		if (type == 1 || type == 3)
-		{
-			square[0] = start;
-			square[1] = new IJ(start.i, finish.j);
-			square[2] = finish;
-			square[3] = new IJ(finish.i, start.j);
-		}
-		else
-		{
-			square[0] = start;
-			square[1] = new IJ(finish.i, start.j);
-			square[2] = finish;
-			square[3] = new IJ(start.i, finish.j);
+				Diamond(square, false);
 		}
 
 	}
-
-	private float segmentLength(IJ start, IJ finish)//вычисление растояния между точками
+	private float GiveHeightDiamond(IJ[] diamond)//подсчет высоты для центра ромба
 	{
-		double segmentLength = Math.Pow((start.i* unit - finish.i*unit), 2) + Math.Pow((start.j * unit - finish.j * unit), 2);
-		return (float)Math.Sqrt(segmentLength);
+		float diagonal;
+		float average = 0;
+		try
+		{
+			diagonal = SegmentLength(diamond[0], diamond[2]);
+		}
+		catch (System.Exception)
+		{
+			diagonal = SegmentLength(diamond[1], diamond[3]);
+		}
+
+
+		for (int i = 0; i < 4; i++)
+		{
+			try
+			{
+				average += heightMap[diamond[i].i, diamond[i].j];
+			}
+			catch (System.Exception)
+			{
+				average += outOfBoundsH;
+			}
+		}
+		average /= 4;
+		average += UnityEngine.Random.Range(-(roughness * diagonal), roughness * diagonal);
+
+		if (maxY < average)
+			maxY = average;
+		if(minY > average)
+			minY = average;
+
+		return average;
 	}
 
-	public void Start(int N,float unit)
+	private float GiveHeightSquare(IJ[] square)//подсчет высоты для цента квадрата
 	{
+		float diagonal = SegmentLength(square[0], square[3]);
+		float average = 0;
+		for (int i = 0; i < 4; i++)
+		{
+			try
+			{
+				average += heightMap[square[i].i, square[i].j];
+			}
+			catch (System.Exception)
+			{
+				average += outOfBoundsH;
+			}
+		}
+		average /= 4;
+		average += UnityEngine.Random.Range(-(roughness * diagonal), roughness * diagonal);
+
+		if (maxY < average)
+			maxY = average;
+		if (minY > average)
+			minY = average;
+
+		return average;
+	}
+
+	private float SegmentLength(IJ start, IJ finish)//вычисление растояния между точками
+	{
+		double segmentLength = Mathf.Pow((start.i * unit - finish.i * unit), 2) + Mathf.Pow((start.j * unit - finish.j * unit), 2);
+		return Mathf.Sqrt((float)segmentLength);
+	}
+
+	public void Nachalo(int N, float unit)//начало
+	{
+		outOfBoundsH = upperRange * 0.25f;
 		this.unit = unit;
-		int mapRang = (int)Math.Pow(2, N) + 1;
-		float[,] heightMap = new float[mapRang, mapRang];
+		mapRang = (int)Mathf.Sqrt(N);
 
-		while (twoPow <= (heightMap.Length - 1) / 2)//количество итераций
-			twoPow *= 2;
-		twoPow /= 2;
+		int lenght = 0;
+		for (int i = 0; lenght < mapRang; i++)
+		{
+			lenght = (int)Mathf.Pow(2, i) + 1;
+		}
+		heightMap = new float[lenght, lenght];
 
+		TerraForm();
 	}
 
 }
@@ -105,4 +296,3 @@ public class DiamondSquare : MonoBehaviour
 //إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ
 //ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ
 //صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ
-
