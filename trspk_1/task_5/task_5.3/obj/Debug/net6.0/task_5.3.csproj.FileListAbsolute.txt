@@ -1,0 +1,15 @@
+K:\gitrepos\TRSPK_Team_1\trspk_1\task_5\task_5.3\bin\Debug\net6.0\task_5.3.exe
+K:\gitrepos\TRSPK_Team_1\trspk_1\task_5\task_5.3\bin\Debug\net6.0\task_5.3.deps.json
+K:\gitrepos\TRSPK_Team_1\trspk_1\task_5\task_5.3\bin\Debug\net6.0\task_5.3.runtimeconfig.json
+K:\gitrepos\TRSPK_Team_1\trspk_1\task_5\task_5.3\bin\Debug\net6.0\task_5.3.dll
+K:\gitrepos\TRSPK_Team_1\trspk_1\task_5\task_5.3\bin\Debug\net6.0\ref\task_5.3.dll
+K:\gitrepos\TRSPK_Team_1\trspk_1\task_5\task_5.3\bin\Debug\net6.0\task_5.3.pdb
+K:\gitrepos\TRSPK_Team_1\trspk_1\task_5\task_5.3\obj\Debug\net6.0\task_5.3.csproj.AssemblyReference.cache
+K:\gitrepos\TRSPK_Team_1\trspk_1\task_5\task_5.3\obj\Debug\net6.0\task_5.3.GeneratedMSBuildEditorConfig.editorconfig
+K:\gitrepos\TRSPK_Team_1\trspk_1\task_5\task_5.3\obj\Debug\net6.0\task_5.3.AssemblyInfoInputs.cache
+K:\gitrepos\TRSPK_Team_1\trspk_1\task_5\task_5.3\obj\Debug\net6.0\task_5.3.AssemblyInfo.cs
+K:\gitrepos\TRSPK_Team_1\trspk_1\task_5\task_5.3\obj\Debug\net6.0\task_5.3.csproj.CoreCompileInputs.cache
+K:\gitrepos\TRSPK_Team_1\trspk_1\task_5\task_5.3\obj\Debug\net6.0\task_5.3.dll
+K:\gitrepos\TRSPK_Team_1\trspk_1\task_5\task_5.3\obj\Debug\net6.0\ref\task_5.3.dll
+K:\gitrepos\TRSPK_Team_1\trspk_1\task_5\task_5.3\obj\Debug\net6.0\task_5.3.pdb
+K:\gitrepos\TRSPK_Team_1\trspk_1\task_5\task_5.3\obj\Debug\net6.0\task_5.3.genruntimeconfig.cache
