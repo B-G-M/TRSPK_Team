@@ -4,8 +4,10 @@ class Program
 {
 	class Class1 : IDisposable
 	{
+		 
 		Class2 class2 = new Class2();
 		bool _disposed;
+		StreamReader streamReader = new("file1.txt");
 
 		~Class1()
 		{
@@ -30,6 +32,7 @@ class Program
 				class2.Dispose();
 			}
 			Console.WriteLine("Class1: не управляемые ресурсы");
+			streamReader.Dispose();
 			_disposed = true;
 		}
 
@@ -39,6 +42,7 @@ class Program
 	{
 		//Class1 class1 = new Class1();
 		bool _disposed;
+		StreamReader streamReader = new("file1.txt");
 
 		~Class2()
 		{
@@ -63,6 +67,7 @@ class Program
 				//class1.Dispose();
 			}
 			Console.WriteLine("Class2: не управляемые ресурсы");
+			streamReader.Dispose();
 			_disposed = true;
 		}
 	}
@@ -70,8 +75,13 @@ class Program
 	static void Main(string[] args)
 	{
 		Class1 class1 = new Class1();
+		for (int i = 0; i < 100; i++)
+		{
+			class1 = new Class1();
+			GC.Collect();
+		}
 		class1.Dispose();
-		GC.Collect();
+		//GC.Collect();;
 	}
 }
 
