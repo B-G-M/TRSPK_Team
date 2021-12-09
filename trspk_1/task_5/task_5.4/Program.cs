@@ -3,16 +3,38 @@ class Program
 {
 	class CopyPaste : IDisposable
 	{
-		CopyPaste(string fileName1,string fileName2)
+		public CopyPaste(string fileName1,string fileName2)
 		{
 			this.fileName1 = fileName1;
 			this.fileName2 = fileName2;
 		}
-		StreamReader streamReader = new("file1.txt");
+		StreamReader file1;
+		StreamWriter file2;
 		bool _disposed;
 		string fileName1;
 		string fileName2;
 
+		private void Open()
+		{
+			file1 = new StreamReader(this.fileName1);
+			file2 = new StreamWriter(this.fileName2);
+		}
+
+		public void Work()
+		{
+			Open();
+			//file2.Write(file1.ReadToEnd());
+			while (!file1.EndOfStream)
+			{		
+				file2.WriteLine(file1.ReadLine());
+			}
+
+			Close();
+		}
+		private void Close()
+		{
+			Dispose();
+		}
 		public void Dispose()
 		{
 			Dispose(true);
@@ -25,16 +47,17 @@ class Program
 				return;
 
 			if (disposing)
-			{
-				Console.WriteLine("Class1: управляемые ресурсы");
-			}
-			Console.WriteLine("Class1: не управляемые ресурсы");
+			{}
+			file1?.Dispose();
+			file2?.Dispose();
+
 			_disposed = true;
 		}
 	}
 
 	static void Main(string[]args)
 	{
-
+		var copyPaste = new CopyPaste("file1.txt", "file2.txt");
+		copyPaste.Work();
 	}
 }

@@ -8,23 +8,23 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\azaza\\.nuget\\packages\\": {},
-    "K:\\vssdk\\NuGetPackages": {}
+    "C:\\Users\\bgm99\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "K:\\gitrepos\\TRSPK_Team_1\\trspk_1\\task_5\\task_5.3\\task_5.3.csproj",
+      "projectUniqueName": "D:\\TRSPK_Team_1\\trspk_1\\task_5\\task_5.3\\task_5.3.csproj",
       "projectName": "task_5.3",
-      "projectPath": "K:\\gitrepos\\TRSPK_Team_1\\trspk_1\\task_5\\task_5.3\\task_5.3.csproj",
-      "packagesPath": "C:\\Users\\azaza\\.nuget\\packages\\",
-      "outputPath": "K:\\gitrepos\\TRSPK_Team_1\\trspk_1\\task_5\\task_5.3\\obj\\",
+      "projectPath": "D:\\TRSPK_Team_1\\trspk_1\\task_5\\task_5.3\\task_5.3.csproj",
+      "packagesPath": "C:\\Users\\bgm99\\.nuget\\packages\\",
+      "outputPath": "D:\\TRSPK_Team_1\\trspk_1\\task_5\\task_5.3\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "K:\\vssdk\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\azaza\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bgm99\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
