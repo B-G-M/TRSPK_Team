@@ -1,18 +1,19 @@
 ﻿
 class Program
 {
-	class ModifyingFile : IDisposable
+	abstract class ModifyingFile : IDisposable
 	{
 		public ModifyingFile(string fileName1, string fileName2)
 		{
 			this.fileName1 = fileName1;
 			this.fileName2 = fileName2;
 		}
-		StreamReader file1;
-		StreamWriter file2;
-		bool _disposed;
-		string fileName1 { get; set; }
-		string fileName2 { get; set; }
+
+		protected StreamReader file1;
+		protected StreamWriter file2;
+		protected bool _disposed;
+		protected string fileName1 { get; set; }
+		protected string fileName2 { get; set; }
 
 		protected void Open()
 		{
@@ -20,12 +21,8 @@ class Program
 			file2 = new StreamWriter(this.fileName2);
 		}
 
-		public void Work(IWork work)
-		{
-			Open();
-			work.Work(file1, file2);
-			Close();
-		}
+		public abstract void Work();
+
 		protected void Close()
 		{
 			Dispose();
@@ -49,27 +46,29 @@ class Program
 			_disposed = true;
 		}
 	}
-	interface IWork
-	{
-		void Work(StreamReader file1, StreamWriter file2);
-	}
 
-	class CopyPasteFile : IWork
+
+	class CopyPaste : ModifyingFile
 	{
-		public void Work(StreamReader file1, StreamWriter file2)
+		public CopyPaste(string fileName1, string fileName2) : base(fileName1, fileName2)
+		{}
+
+		public override void Work()
 		{
+			Open();
 			//file2.Write(file1.ReadToEnd());
 			while (!file1.EndOfStream)
 			{
 				file2.WriteLine(file1.ReadLine());
 			}
+			Close();
 		}
 	}
 
 
 	static void Main(string[] args)
 	{
-		var copyPaste = new ModifyingFile("file1.txt", "file2.txt");
-		copyPaste.Work(new CopyPasteFile());
+		ModifyingFile copyPaste = new CopyPaste("file1.txt", "file2.txt");
+		copyPaste.Work();
 	}
 }
