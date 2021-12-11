@@ -6,35 +6,33 @@ namespace Task_5_3
     {
         class Murder
         {
-            string name = "";
-            public int killed = 0;
-            decimal[] sru = new decimal[10000];
+            string s = "";
+            public int i = 0;
+            
             public Murder(string n, int k)
             {
-                Console.WriteLine("Вызван конструктор убийцы");
-                name = n;
-                killed = k;
+                Console.WriteLine("Вызван конструктор");
+                s = n;
+                i = k;
             }
-            public void Eat(int i)
+            public void print(int i)
             {
-
+                Console.WriteLine("Вызвана функция");
             }
             ~Murder()
             {
-                Console.WriteLine("Убили полисмены");
+                Console.WriteLine("Вызван финализатор");
             }
         }
 
         static void Main(string[] args)
         {
-            string name = "Alan";
-            int killed = 15;
-
-            //Murder killer = new Murder(name, killed);
+            string n = "Alan";
+            int k = 10;
 
             for (int i = 0; i < 1000000; i++)
             {
-                Murder killer = new Murder(name, killed);
+                Murder killer = new Murder(n, k);
                 GC.Collect();
             }
         }
