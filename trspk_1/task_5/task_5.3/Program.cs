@@ -4,12 +4,12 @@ namespace Task_5_3
 {
     internal class Program
     {
-        class Murder
+        class Test
         {
             string s = "";
             public int i = 0;
             
-            public Murder(string n, int k)
+            public Test(string n, int k)
             {
                 Console.WriteLine("Вызван конструктор");
                 s = n;
@@ -19,7 +19,7 @@ namespace Task_5_3
             {
                 Console.WriteLine("Вызвана функция");
             }
-            ~Murder()
+            ~Test()
             {
                 Console.WriteLine("Вызван финализатор");
             }
@@ -32,7 +32,7 @@ namespace Task_5_3
 
             for (int i = 0; i < 1000000; i++)
             {
-                Murder killer = new Murder(n, k);
+                Test test = new Test(n, k);
                 GC.Collect();
             }
         }
