@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "P47D0Fv3yBJzVFFS6bEa5uTQydaFV/wm714iIroh1atQ0pM78G68Ms+oBQ75oXZSuY/u9b6FzH4lFspmLCh6KQ==",
+  "dgSpecHash": "D/mwGW5nK3a8WfNmPtcJloYHmkkpARaI+yZp6zzRnIpJrfvh1livTYa3PBOi3noxxBQUYNz9QyAhQZ3JV5WXfw==",
   "success": true,
-  "projectFilePath": "D:\\TRSPK_Team\\trspk\\Lab\\ConsoleApp\\ConsoleApp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\TRSPK_Team_1\\trspk_6\\Lab\\ConsoleApp\\ConsoleApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bgm99\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512",
+    "C:\\Users\\bgm99\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\bgm99\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\bgm99\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

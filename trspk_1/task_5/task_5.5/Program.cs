@@ -80,8 +80,10 @@ class Program
 			class1 = new Class1();
 			GC.Collect();
 		}
-		class1.Dispose();
-		//GC.Collect();;
+		//class1.Dispose();
+		//GC.Collect();
+		//GC.WaitForPendingFinalizers();
+		//GC.Collect();
 	}
 }
 

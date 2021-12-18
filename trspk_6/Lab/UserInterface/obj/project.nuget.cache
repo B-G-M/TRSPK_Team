@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "tMn79PkYLEcX5CI41Tf1+2LOyX+WZcDH8NcGWUJmidoJG+PrdGxQVBBbTVQw9ORk8FtlhKCMCsS6S0h4+KZZxA==",
+  "dgSpecHash": "Fj3IA3pMkI5pAs3oP5yXNA/QF6fRGNtQJSq/f8pGoPvDq1ahNHx41ggndPHjAIwMqFW2sv8aA9ipPQQufyq9oQ==",
   "success": true,
-  "projectFilePath": "D:\\TRSPK_Team\\trspk\\Lab\\UserInterface\\UserInterface.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\TRSPK_Team_1\\trspk_6\\Lab\\UserInterface\\UserInterface.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bgm99\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512",
+    "C:\\Users\\bgm99\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\bgm99\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\bgm99\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

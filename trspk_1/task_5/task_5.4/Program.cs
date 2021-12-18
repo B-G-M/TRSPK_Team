@@ -7,6 +7,11 @@ class Program
 		{
 			this.fileName1 = fileName1;
 			this.fileName2 = fileName2;
+			Open();
+		}
+		~ModifyingFile()
+		{
+			Dispose(false);
 		}
 		StreamReader file1;
 		StreamWriter file2;
@@ -22,7 +27,6 @@ class Program
 
 		public void Work(IWork work)
 		{
-			Open();
 			work.Work(file1, file2);
 			Close();
 		}
@@ -42,9 +46,10 @@ class Program
 				return;
 
 			if (disposing)
-			{ }
-			file1?.Dispose();
-			file2?.Dispose();
+			{
+				file1?.Dispose();
+				file2?.Dispose();
+			}
 
 			_disposed = true;
 		}

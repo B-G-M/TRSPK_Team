@@ -29,14 +29,18 @@ namespace Task_5_3
         {
             string name = "Alan";
             int killed = 15;
-
-            //Murder killer = new Murder(name, killed);
-
-            for (int i = 0; i < 1000000; i++)
-            {
-                Murder killer = new Murder(name, killed);
-                GC.Collect();
-            }
+            Console.WriteLine("Начало");
+            Murder killer = new Murder(name, killed);
+            killer = null;
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            Thread.Sleep(1000);
+            //for (int i = 0; i < 100; i++)
+            //{
+            //	Murder killer = new Murder(name, killed);
+            //	GC.Collect();
+            //}
+            Console.WriteLine("Конец");
         }
     }
 }

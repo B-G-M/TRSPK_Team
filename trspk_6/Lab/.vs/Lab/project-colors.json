@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c12d5112-155f-4ddb-b9b1-eb79de1b1d20": {
+      "ProjectGuid": "c12d5112-155f-4ddb-b9b1-eb79de1b1d20",
+      "DisplayName": "UserInterface",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

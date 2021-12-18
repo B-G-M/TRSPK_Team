@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TRSPK_Team\\trspk\\Lab\\UserInterface\\UserInterface.csproj": {}
+    "D:\\TRSPK_Team_1\\trspk_6\\Lab\\UserInterface\\UserInterface.csproj": {}
   },
   "projects": {
-    "D:\\TRSPK_Team\\trspk\\Lab\\ConsoleApp\\ConsoleApp.csproj": {
+    "D:\\TRSPK_Team_1\\trspk_6\\Lab\\ConsoleApp\\ConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TRSPK_Team\\trspk\\Lab\\ConsoleApp\\ConsoleApp.csproj",
+        "projectUniqueName": "D:\\TRSPK_Team_1\\trspk_6\\Lab\\ConsoleApp\\ConsoleApp.csproj",
         "projectName": "ConsoleApp",
-        "projectPath": "D:\\TRSPK_Team\\trspk\\Lab\\ConsoleApp\\ConsoleApp.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\TRSPK_Team\\trspk\\Lab\\ConsoleApp\\obj\\",
+        "projectPath": "D:\\TRSPK_Team_1\\trspk_6\\Lab\\ConsoleApp\\ConsoleApp.csproj",
+        "packagesPath": "C:\\Users\\bgm99\\.nuget\\packages\\",
+        "outputPath": "D:\\TRSPK_Team_1\\trspk_6\\Lab\\ConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bgm99\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -53,29 +53,47 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.12, 5.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\TRSPK_Team\\trspk\\Lab\\UserInterface\\UserInterface.csproj": {
+    "D:\\TRSPK_Team_1\\trspk_6\\Lab\\UserInterface\\UserInterface.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TRSPK_Team\\trspk\\Lab\\UserInterface\\UserInterface.csproj",
+        "projectUniqueName": "D:\\TRSPK_Team_1\\trspk_6\\Lab\\UserInterface\\UserInterface.csproj",
         "projectName": "UserInterface",
-        "projectPath": "D:\\TRSPK_Team\\trspk\\Lab\\UserInterface\\UserInterface.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\TRSPK_Team\\trspk\\Lab\\UserInterface\\obj\\",
+        "projectPath": "D:\\TRSPK_Team_1\\trspk_6\\Lab\\UserInterface\\UserInterface.csproj",
+        "packagesPath": "C:\\Users\\bgm99\\.nuget\\packages\\",
+        "outputPath": "D:\\TRSPK_Team_1\\trspk_6\\Lab\\UserInterface\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bgm99\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -90,8 +108,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "D:\\TRSPK_Team\\trspk\\Lab\\ConsoleApp\\ConsoleApp.csproj": {
-                "projectPath": "D:\\TRSPK_Team\\trspk\\Lab\\ConsoleApp\\ConsoleApp.csproj"
+              "D:\\TRSPK_Team_1\\trspk_6\\Lab\\ConsoleApp\\ConsoleApp.csproj": {
+                "projectPath": "D:\\TRSPK_Team_1\\trspk_6\\Lab\\ConsoleApp\\ConsoleApp.csproj"
               }
             }
           }
@@ -115,6 +133,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.12, 5.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -123,7 +159,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
