@@ -4,43 +4,37 @@ namespace Task_5_3
 {
     internal class Program
     {
-        class Murder
+        class Test
         {
-            string name = "";
-            public int killed = 0;
-            decimal[] sru = new decimal[10000];
-            public Murder(string n, int k)
+            string s = "";
+            public int i = 0;
+            
+            public Test(string n, int k)
             {
-                Console.WriteLine("Вызван конструктор убийцы");
-                name = n;
-                killed = k;
+                Console.WriteLine("Вызван конструктор");
+                s = n;
+                i = k;
             }
-            public void Eat(int i)
+            public void print(int i)
             {
-
+                Console.WriteLine("Вызвана функция");
             }
-            ~Murder()
+            ~Test()
             {
-                Console.WriteLine("Убили полисмены");
+                Console.WriteLine("Вызван финализатор");
             }
         }
 
         static void Main(string[] args)
         {
-            string name = "Alan";
-            int killed = 15;
-            Console.WriteLine("Начало");
-            Murder killer = new Murder(name, killed);
-            killer = null;
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
-            Thread.Sleep(1000);
-            //for (int i = 0; i < 100; i++)
-            //{
-            //	Murder killer = new Murder(name, killed);
-            //	GC.Collect();
-            //}
-            Console.WriteLine("Конец");
+            string n = "Alan";
+            int k = 10;
+
+            for (int i = 0; i < 1000000; i++)
+            {
+                Test test = new Test(n, k);
+                GC.Collect();
+            }
         }
     }
 }
