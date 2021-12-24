@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,9 +53,6 @@
     <UnityVersion>2020.3.23f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Assets\New Folder\Meshbilder.cs" />
     <Compile Include="Assets\TerraCreator.cs" />
     <Compile Include="Assets\MeshCreator.cs" />
@@ -63,6 +60,7 @@
     <Compile Include="Assets\New Folder\TerrainDiamondSquare.cs" />
     <Compile Include="Assets\New Folder\ProcTerrain.cs" />
     <Compile Include="Assets\DiamondSquare.cs" />
+    <Compile Include="Assets\WorldCreator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -312,6 +312,7 @@ GameObject:
   - component: {fileID: 1292760820}
   - component: {fileID: 1292760823}
   - component: {fileID: 1292760819}
+  - component: {fileID: 1292760824}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -333,6 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upperRange: 1
   roughness: 0.01
+  mapRang: 0
 --- !u!23 &1292760820
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -408,5 +410,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a864482b88578d14ab3cad49189425c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  n: 10
-  quality: 200
+  diamondSquare: {fileID: 0}
+  n: 5
+  quality: 100
+--- !u!114 &1292760824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292760818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f8c001c54fafd4b863e5cb468b395a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terra: {fileID: 6692444591823269234, guid: 573c7db6c2177e64f97c166dede4f878, type: 3}

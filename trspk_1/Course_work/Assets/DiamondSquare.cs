@@ -21,12 +21,12 @@ public class IJ
 
 public class DiamondSquare : MonoBehaviour
 {
-	public float upperRange = 10.0f;
-	private float lowerRange = 1f;
-	public float roughness = 0.25f;
+	static public float upperRange = 10.0f;
+	static private float lowerRange = 1f;
+	static public float roughness = 0.25f;
 	private float outOfBoundsH;
 	private int fourPow = 0;
-	private int mapRang;
+	public int mapRang = 0;
 
 	private int wet;
 	private float maxY = 0;
@@ -35,7 +35,8 @@ public class DiamondSquare : MonoBehaviour
 	private float unit;
 	private int step;
 	private int aslant;
-	private float[,] heightMap;
+
+	public float[,] heightMap;
 
 	private List<IJ[]> waitingDot = new List<IJ[]>();
 
@@ -56,14 +57,20 @@ public class DiamondSquare : MonoBehaviour
 
 		int index = (int)(y / stepColor);
 
-		if (index == 4)
+		if (index >= 4)
 		{
-			return colorsArr[index - 1, wet];
+			return colorsArr[3, wet];
 		}
-		return colorsArr[index, wet];
-
-
+		try
+		{
+			return colorsArr[index, wet];
+		}
+		catch (System.Exception)
+		{
+			return colorsArr[0, 0];
+		}
 		
+
 	}
 
 	public void TerraForm()
@@ -94,7 +101,8 @@ public class DiamondSquare : MonoBehaviour
 		colorsArr[3,4] = new Color32(252, 252, 252, 255);
 		colorsArr[3,5] = new Color32(255, 255, 255, 255);
 
-		wet = UnityEngine.Random.Range(0, 6);
+		wet = UnityEngine.Random.Range(0, 5);
+		roughness = UnityEngine.Random.Range(0.01f, 0.5f);
 
 		IJ start = new IJ(0, 0);
 		IJ finish = new IJ(mapRang - 1, mapRang - 1);
@@ -112,10 +120,15 @@ public class DiamondSquare : MonoBehaviour
 
 
 		//Задаем случайниые высоты углам
-		heightMap[start.i, start.j] = UnityEngine.Random.Range(lowerRange, upperRange);
-		heightMap[start.i, finish.j] = UnityEngine.Random.Range(lowerRange, upperRange);
-		heightMap[finish.i, finish.j] = UnityEngine.Random.Range(lowerRange, upperRange);
-		heightMap[finish.i, start.j] = UnityEngine.Random.Range(lowerRange, upperRange);
+		if (heightMap[start.i, start.j] == 0)
+			heightMap[start.i, start.j] = UnityEngine.Random.Range(lowerRange, upperRange);
+		if (heightMap[start.i, finish.j] == 0)
+			heightMap[start.i, finish.j] = UnityEngine.Random.Range(lowerRange, upperRange);
+		if (heightMap[finish.i, finish.j] == 0)
+			heightMap[finish.i, finish.j] = UnityEngine.Random.Range(lowerRange, upperRange);
+		if (heightMap[finish.i, start.j] == 0)
+			heightMap[finish.i, start.j] = UnityEngine.Random.Range(lowerRange, upperRange);
+		
 
 		Diamond(square, true);
 	}
@@ -124,8 +137,8 @@ public class DiamondSquare : MonoBehaviour
 	{
 
 		diamond.Add(new IJ(square[0].i + aslant / 2, square[0].j + aslant / 2));//добавляем элемент место где ждут
-
-		heightMap[square[0].i + aslant / 2, square[0].j + aslant / 2] = GiveHeightSquare(square);//присваиваем значение
+		if (heightMap[square[0].i + aslant / 2, square[0].j + aslant / 2] == 0)
+			heightMap[square[0].i + aslant / 2, square[0].j + aslant / 2] = GiveHeightSquare(square);//присваиваем значение
 
 		if (down)
 		{
@@ -137,7 +150,8 @@ public class DiamondSquare : MonoBehaviour
 
 	private void DiamondRhombus(IJ[] rhombus)
 	{
-		heightMap[rhombus[0].i, rhombus[0].j + aslant] = GiveHeightDiamond(rhombus);//присваиваем значение
+		if (heightMap[rhombus[0].i, rhombus[0].j + aslant] == 0)
+			heightMap[rhombus[0].i, rhombus[0].j + aslant] = GiveHeightDiamond(rhombus);//присваиваем значение
 	}
 
 	public void Square(List<IJ> diamond, bool down)
@@ -276,14 +290,17 @@ public class DiamondSquare : MonoBehaviour
 	{
 		outOfBoundsH = upperRange * 0.25f;
 		this.unit = unit;
-		mapRang = (int)Mathf.Sqrt(N);
+		mapRang = N;
 
-		int lenght = 0;
-		for (int i = 0; lenght < mapRang; i++)
+		//int lenght = 0;
+		//for (int i = 0; lenght < mapRang; i++)
+		//{
+		//	lenght = (int)Mathf.Pow(2, i) + 1;
+		//}
+		if (heightMap == null)
 		{
-			lenght = (int)Mathf.Pow(2, i) + 1;
+			heightMap = new float[N, N];
 		}
-		heightMap = new float[lenght, lenght];
 
 		TerraForm();
 	}

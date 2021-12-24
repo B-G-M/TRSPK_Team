@@ -15,7 +15,7 @@ public class MeshCreator
 	public List<Vector2> UVs { get { return new List<Vector2>(); } }
 	//public List <Color32> Colors { get { return new List<Color32>(); } }
 
-	private int countTriangles = 0;
+	public int countTriangles = 0;
 
 	public void AddTriangle(int pos1,int pos2,int pos3)
 	{

@@ -2,11 +2,18 @@ using System;
 using UnityEngine;
 public class TerraCreator : MonoBehaviour
 {
-	DiamondSquare diamondSquare = new DiamondSquare();
+	public static int count = 3;
+	private static int iWorld = 0;
+	private static int jWorld = 0;
+	private static int  x, z;
+	public DiamondSquare diamondSquare;
 	//public float mHeight = 0.0f;
-	public int n = 2;
+	public static int n = 12;
 	private float mWidth;
-	public int quality = 10;
+	public static int quality = 100;
+	private Vector3 step;
+
+	static private DiamondSquare [,] world = new DiamondSquare [100,100];
 
 	private void ConstructQuadForMesh(MeshCreator meshCreator, Vector3 position, Vector2 uv,
 		bool buildTriangles, int vertsPerRow)
@@ -29,25 +36,55 @@ public class TerraCreator : MonoBehaviour
 		
 	}
 
-
-	private void Start()
+	public void Start()
 	{
 		MeshCreator meshCreator = new MeshCreator();
 		mWidth = (float)Math.Pow(2, n) + 1;
+
+		int mapRang = (int)Mathf.Sqrt((quality + 1) * (quality + 1));
+		int lenght = 0;
+		for (int i = 0; lenght < mapRang; i++)
+		{
+			lenght = (int)Mathf.Pow(2, i) + 1;
+		}
+		quality = lenght - 1;
+
 		float scale = mWidth / quality;//размер сегментов
-		diamondSquare.Nachalo((quality + 1) * (quality + 1), scale);
-		Matrix4x4 meshTransform = transform.localToWorldMatrix;
+
+		diamondSquare = new DiamondSquare();
+
+		diamondSquare.heightMap = new float[(quality + 1), (quality + 1)];
+		if (jWorld != 0)
+		{
+			
+			for (int i = 0; i < quality + 1; i++)
+			{
+				diamondSquare.heightMap[i, 0] = world[iWorld, jWorld - 1].heightMap[i, world[iWorld, jWorld - 1].mapRang - 1];
+			}
+		}
+		if (iWorld != 0)
+		{
+			//diamondSquare.heightMap = new float[(quality + 1), (quality + 1)];
+			for (int i = 0; i < quality + 1; i++)
+			{
+				diamondSquare.heightMap[0, i] = world[iWorld - 1, jWorld].heightMap[world[iWorld - 1, jWorld].mapRang - 1, i];
+			}
+		}
+
+		diamondSquare.Nachalo(quality + 1, scale);
+		//Matrix4x4 meshTransform = transform.localToWorldMatrix; хз что это, может быть нужное 
 
 		for (int i = 0; i <= quality; i++)
 		{
 			float z = scale * i;
 			float v = (1.0f / quality) * i;
-
+			float y;
 			for (int j = 0; j <= quality; j++)
 			{
 				float x = scale * j;
 				float u = (1.0f / quality) * j;
-				float y = diamondSquare.GetY(i, j);
+
+				y = diamondSquare.GetY(i, j);
 
 				meshCreator.colors.Add(diamondSquare.GetColor(y));
 
@@ -63,6 +100,21 @@ public class TerraCreator : MonoBehaviour
 
 		Mesh mesh = meshCreator.GetMesh();
 
+		gameObject.transform.position = new	Vector3(x, 0, z);
+
+		world[iWorld, jWorld] = diamondSquare;
+		if (step != null)
+			step = meshCreator.Vertices[meshCreator.Vertices.Count - 1];
+
+		x += (int)step.x;
+		jWorld++;
+		if (jWorld == count)
+		{
+			jWorld = 0;
+			iWorld++;
+			x = 0;
+			z += (int)step.x;
+		}
 		MeshFilter filter = GetComponent<MeshFilter>();
 
 		if (filter != null)
