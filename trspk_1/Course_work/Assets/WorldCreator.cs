@@ -5,7 +5,7 @@ using UnityEngine;
 public class WorldCreator : MonoBehaviour
 {
 	public GameObject terra;
-	private static int count = 3;
+	private static int count = 9;
 
 	private void Start()
 	{
