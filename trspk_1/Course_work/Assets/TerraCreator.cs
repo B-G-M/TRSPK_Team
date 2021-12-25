@@ -2,15 +2,15 @@ using System;
 using UnityEngine;
 public class TerraCreator : MonoBehaviour
 {
-	public static int count = 3;
+	private static int count = 3;
 	private static int iWorld = 0;
 	private static int jWorld = 0;
 	private static int  x, z;
-	public DiamondSquare diamondSquare;
+	private DiamondSquare diamondSquare;
 	//public float mHeight = 0.0f;
-	public static int n = 12;
+	private static int n = 15;
+	private static int quality = 100;
 	private float mWidth;
-	public static int quality = 100;
 	private Vector3 step;
 
 	static private DiamondSquare [,] world = new DiamondSquare [100,100];

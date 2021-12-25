@@ -21,9 +21,9 @@ public class IJ
 
 public class DiamondSquare : MonoBehaviour
 {
-	static public float upperRange = 10.0f;
+	static private float upperRange = 10.0f;
 	static private float lowerRange = 1f;
-	static public float roughness = 0.25f;
+	static private float roughness = 0.25f;
 	private float outOfBoundsH;
 	private int fourPow = 0;
 	public int mapRang = 0;
@@ -102,7 +102,16 @@ public class DiamondSquare : MonoBehaviour
 		colorsArr[3,5] = new Color32(255, 255, 255, 255);
 
 		wet = UnityEngine.Random.Range(0, 5);
-		roughness = UnityEngine.Random.Range(0.01f, 0.5f);
+		if (wet == 0)
+			roughness = 0.1f;
+		if (wet == 1)
+			roughness = 0.2f;
+		if (wet == 2)
+			roughness = 0.3f;
+		if (wet == 3)
+			roughness = 0.4f;
+		if (wet == 4)
+			roughness = 0.5f;
 
 		IJ start = new IJ(0, 0);
 		IJ finish = new IJ(mapRang - 1, mapRang - 1);

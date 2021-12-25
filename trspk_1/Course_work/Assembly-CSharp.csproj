@@ -53,14 +53,10 @@
     <UnityVersion>2020.3.23f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\New Folder\Meshbilder.cs" />
     <Compile Include="Assets\TerraCreator.cs" />
     <Compile Include="Assets\MeshCreator.cs" />
-    <Compile Include="Assets\New Folder\TerrainOffset.cs" />
-    <Compile Include="Assets\New Folder\TerrainDiamondSquare.cs" />
-    <Compile Include="Assets\New Folder\ProcTerrain.cs" />
-    <Compile Include="Assets\DiamondSquare.cs" />
     <Compile Include="Assets\WorldCreator.cs" />
+    <Compile Include="Assets\DiamondSquare.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
