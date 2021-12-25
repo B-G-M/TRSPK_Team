@@ -2,13 +2,13 @@ using System;
 using UnityEngine;
 public class TerraCreator : MonoBehaviour
 {
-	private static int count = 9;
+	private static int count = 3;
 	private static int iWorld = 0;
 	private static int jWorld = 0;
 	private static int  x, z;
 	private DiamondSquare diamondSquare;
 	//public float mHeight = 0.0f;
-	private static int n = 10;
+	private static int n = 15;
 	private static int quality = 100;
 	private float mWidth;
 	private Vector3 step;
