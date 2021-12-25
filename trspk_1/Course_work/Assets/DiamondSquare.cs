@@ -28,7 +28,7 @@ public class DiamondSquare : MonoBehaviour
 	private int fourPow = 0;
 	public int mapRang = 0;
 
-	private int wet;
+	static private int wet = 2;
 	private float maxY = 0;
 	private float minY = 0;
 
@@ -101,7 +101,12 @@ public class DiamondSquare : MonoBehaviour
 		colorsArr[3,4] = new Color32(252, 252, 252, 255);
 		colorsArr[3,5] = new Color32(255, 255, 255, 255);
 
-		wet = UnityEngine.Random.Range(0, 5);
+		wet = UnityEngine.Random.Range(wet - 1, wet + 2);
+		if (wet > 5)
+			wet = 5;
+		if (wet < 0)
+			wet = 0;
+
 		if (wet == 0)
 			roughness = 0.1f;
 		if (wet == 1)
