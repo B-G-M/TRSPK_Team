@@ -119,8 +119,13 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 939
+<<<<<<< HEAD
   m_MinSize: {x: 579, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
+=======
+  m_MinSize: {x: 577, y: 471}
+  m_MaxSize: {x: 14001, y: 14042}
+>>>>>>> parent of f65b4dd (upd)
   vertical: 0
   controlID: 39
 --- !u!114 &6
@@ -144,7 +149,11 @@ MonoBehaviour:
     y: 0
     width: 1644
     height: 939
+<<<<<<< HEAD
   m_MinSize: {x: 303, y: 492}
+=======
+  m_MinSize: {x: 302, y: 471}
+>>>>>>> parent of f65b4dd (upd)
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
   controlID: 40
@@ -315,9 +324,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 7312.217, y: 4056.2852, z: 5385.729}
     speed: 2
     m_Value: {x: 7312.217, y: 4056.2852, z: 5385.729}
+=======
+    m_Target: {x: 43047.785, y: 27145.09, z: 8572.238}
+    speed: 2
+    m_Value: {x: 43047.785, y: 27145.09, z: 8572.238}
+>>>>>>> parent of f65b4dd (upd)
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -364,9 +379,15 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
+<<<<<<< HEAD
     m_Target: {x: 0.5651625, y: -0.20602934, z: 0.1483567, w: 0.7849909}
     speed: 2
     m_Value: {x: 0.56491756, y: -0.20719862, z: 0.14919853, w: 0.78465074}
+=======
+    m_Target: {x: 0.3981411, y: -0.00921433, z: 0.004023879, w: 0.9172901}
+    speed: 2
+    m_Value: {x: 0.39675707, y: -0.009220179, z: 0.004009975, w: 0.9178686}
+>>>>>>> parent of f65b4dd (upd)
   m_Size:
     m_Target: 188.70882
     speed: 2

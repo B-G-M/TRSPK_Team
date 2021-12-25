@@ -15,11 +15,19 @@ D:/TRSPK_Team_1/trspk_1/Course_work
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
+<<<<<<< HEAD
 56829
 Successfully changed project path to: D:/TRSPK_Team_1/trspk_1/Course_work
 D:/TRSPK_Team_1/trspk_1/Course_work
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 31.00 ms, found 2 plugins.
+=======
+51995
+Successfully changed project path to: D:/TRSPK_Team_1/trspk_1/Course_work
+D:/TRSPK_Team_1/trspk_1/Course_work
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 32.68 ms, found 2 plugins.
+>>>>>>> parent of f65b4dd (upd)
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.23f1 (c5d91304a876)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.23f1/Editor/Data/Resources/UnitySubsystems
@@ -35,6 +43,7 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.23f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.23f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.23f1/Editor/Data/MonoBleedingEdge/etc'
+<<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56460
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
@@ -48,10 +57,26 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (607ms)
 		BeginReloadAssembly (52ms)
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56600
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.23f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001712 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 37.09 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.686 seconds
+Domain Reload Profiling:
+	ReloadAssembly (686ms)
+		BeginReloadAssembly (67ms)
+>>>>>>> parent of f65b4dd (upd)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
+<<<<<<< HEAD
 			CreateAndSetChildDomain (1ms)
 		EndReloadAssembly (481ms)
 			LoadAssemblies (50ms)
@@ -60,19 +85,37 @@ Domain Reload Profiling:
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (39ms)
 			SetupLoadedEditorAssemblies (184ms)
+=======
+			CreateAndSetChildDomain (2ms)
+		EndReloadAssembly (537ms)
+			LoadAssemblies (63ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (173ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (203ms)
+>>>>>>> parent of f65b4dd (upd)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
+<<<<<<< HEAD
 				RefreshPlugins (34ms)
 				BeforeProcessingInitializeOnLoad (17ms)
 				ProcessInitializeOnLoadAttributes (97ms)
 				ProcessInitializeOnLoadMethodAttributes (30ms)
+=======
+				RefreshPlugins (37ms)
+				BeforeProcessingInitializeOnLoad (18ms)
+				ProcessInitializeOnLoadAttributes (104ms)
+				ProcessInitializeOnLoadMethodAttributes (36ms)
+>>>>>>> parent of f65b4dd (upd)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.002457 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -95,12 +138,41 @@ Domain Reload Profiling:
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (54ms)
 			SetupLoadedEditorAssemblies (328ms)
+=======
+Registered in 0.002744 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.119 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1120ms)
+		BeginReloadAssembly (162ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (22ms)
+		EndReloadAssembly (890ms)
+			LoadAssemblies (91ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (313ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (55ms)
+			SetupLoadedEditorAssemblies (332ms)
+>>>>>>> parent of f65b4dd (upd)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (0ms)
+<<<<<<< HEAD
 				BeforeProcessingInitializeOnLoad (83ms)
 				ProcessInitializeOnLoadAttributes (222ms)
+=======
+				BeforeProcessingInitializeOnLoad (86ms)
+				ProcessInitializeOnLoadAttributes (225ms)
+>>>>>>> parent of f65b4dd (upd)
 				ProcessInitializeOnLoadMethodAttributes (10ms)
 				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
@@ -110,14 +182,23 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+<<<<<<< HEAD
 Refreshing native plugins compatible for Editor in 0.31 ms, found 2 plugins.
+=======
+Refreshing native plugins compatible for Editor in 0.34 ms, found 2 plugins.
+>>>>>>> parent of f65b4dd (upd)
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1504 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 145.0 MB.
 System memory in use after: 145.1 MB.
 
+<<<<<<< HEAD
 Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 1948.
 Total: 3.033200 ms (FindLiveObjects: 0.153200 ms CreateObjectMapping: 0.034500 ms MarkObjects: 2.766700 ms  DeleteObjects: 0.077600 ms)
+=======
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 1947.
+Total: 2.960800 ms (FindLiveObjects: 0.160100 ms CreateObjectMapping: 0.035400 ms MarkObjects: 2.700000 ms  DeleteObjects: 0.063800 ms)
+>>>>>>> parent of f65b4dd (upd)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -131,14 +212,22 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
+<<<<<<< HEAD
   path: Assets/Colors.mat
   artifactKey: Guid(25d57641063be414b82bc8eac056eee1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Colors.mat using Guid(25d57641063be414b82bc8eac056eee1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c81db7360e1af8262211e655c534e5a5') in 0.111490 seconds 
   Import took 0.113785 seconds .
+=======
+  path: Assets/MeshCreator.cs
+  artifactKey: Guid(c1f027a978fd17e4c93db230a0491c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MeshCreator.cs using Guid(c1f027a978fd17e4c93db230a0491c98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e995c60e022ca0d4ece26200caab0a3') in 0.024779 seconds 
+  Import took 0.027009 seconds .
+>>>>>>> parent of f65b4dd (upd)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.002450 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -149,10 +238,23 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (1018ms)
 		BeginReloadAssembly (108ms)
+=======
+Registered in 0.002402 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.32 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.994 seconds
+Domain Reload Profiling:
+	ReloadAssembly (994ms)
+		BeginReloadAssembly (116ms)
+>>>>>>> parent of f65b4dd (upd)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
+<<<<<<< HEAD
 			CreateAndSetChildDomain (30ms)
 		EndReloadAssembly (846ms)
 			LoadAssemblies (83ms)
@@ -161,26 +263,50 @@ Domain Reload Profiling:
 			ReleaseScriptCaches (1ms)
 			RebuildScriptCaches (57ms)
 			SetupLoadedEditorAssemblies (301ms)
+=======
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (815ms)
+			LoadAssemblies (87ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (279ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (50ms)
+			SetupLoadedEditorAssemblies (299ms)
+>>>>>>> parent of f65b4dd (upd)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (0ms)
+<<<<<<< HEAD
 				BeforeProcessingInitializeOnLoad (77ms)
 				ProcessInitializeOnLoadAttributes (203ms)
+=======
+				BeforeProcessingInitializeOnLoad (78ms)
+				ProcessInitializeOnLoadAttributes (200ms)
+>>>>>>> parent of f65b4dd (upd)
 				ProcessInitializeOnLoadMethodAttributes (9ms)
 				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
+<<<<<<< HEAD
 Refreshing native plugins compatible for Editor in 0.33 ms, found 2 plugins.
+=======
+Refreshing native plugins compatible for Editor in 0.32 ms, found 2 plugins.
+>>>>>>> parent of f65b4dd (upd)
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1498 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 148.2 MB.
 System memory in use after: 148.3 MB.
 
+<<<<<<< HEAD
 Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1990.
 Total: 2.647600 ms (FindLiveObjects: 0.159900 ms CreateObjectMapping: 0.035300 ms MarkObjects: 2.435000 ms  DeleteObjects: 0.015700 ms)
+=======
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1949.
+Total: 3.700400 ms (FindLiveObjects: 0.133200 ms CreateObjectMapping: 0.035300 ms MarkObjects: 3.499200 ms  DeleteObjects: 0.031200 ms)
+>>>>>>> parent of f65b4dd (upd)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -195,6 +321,7 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.002557 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -205,16 +332,35 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (992ms)
 		BeginReloadAssembly (114ms)
+=======
+Registered in 0.002324 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.012 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1012ms)
+		BeginReloadAssembly (119ms)
+>>>>>>> parent of f65b4dd (upd)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
+<<<<<<< HEAD
 			CreateAndSetChildDomain (30ms)
 		EndReloadAssembly (808ms)
 			LoadAssemblies (86ms)
+=======
+			CreateAndSetChildDomain (47ms)
+		EndReloadAssembly (829ms)
+			LoadAssemblies (81ms)
+>>>>>>> parent of f65b4dd (upd)
 			RebuildTransferFunctionScriptingTraits (0ms)
 			SetupTypeCache (275ms)
 			ReleaseScriptCaches (1ms)
+<<<<<<< HEAD
 			RebuildScriptCaches (49ms)
 			SetupLoadedEditorAssemblies (302ms)
 				LogAssemblyErrors (0ms)
@@ -222,6 +368,15 @@ Domain Reload Profiling:
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (0ms)
 				BeforeProcessingInitializeOnLoad (78ms)
+=======
+			RebuildScriptCaches (54ms)
+			SetupLoadedEditorAssemblies (300ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (76ms)
+>>>>>>> parent of f65b4dd (upd)
 				ProcessInitializeOnLoadAttributes (203ms)
 				ProcessInitializeOnLoadMethodAttributes (9ms)
 				AfterProcessingInitializeOnLoad (6ms)
@@ -229,12 +384,17 @@ Domain Reload Profiling:
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
+<<<<<<< HEAD
 Refreshing native plugins compatible for Editor in 0.38 ms, found 2 plugins.
+=======
+Refreshing native plugins compatible for Editor in 0.32 ms, found 2 plugins.
+>>>>>>> parent of f65b4dd (upd)
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1498 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 148.2 MB.
 System memory in use after: 148.3 MB.
 
+<<<<<<< HEAD
 Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1992.
 Total: 2.952000 ms (FindLiveObjects: 0.184300 ms CreateObjectMapping: 0.040400 ms MarkObjects: 2.706200 ms  DeleteObjects: 0.019300 ms)
 
@@ -293,6 +453,10 @@ System memory in use after: 148.3 MB.
 
 Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1994.
 Total: 2.702700 ms (FindLiveObjects: 0.157400 ms CreateObjectMapping: 0.034700 ms MarkObjects: 2.491200 ms  DeleteObjects: 0.018200 ms)
+=======
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1951.
+Total: 2.605100 ms (FindLiveObjects: 0.140600 ms CreateObjectMapping: 0.036000 ms MarkObjects: 2.412600 ms  DeleteObjects: 0.014500 ms)
+>>>>>>> parent of f65b4dd (upd)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -307,20 +471,32 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.002382 seconds.
+=======
+Registered in 0.002655 seconds.
+>>>>>>> parent of f65b4dd (upd)
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.32 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
+<<<<<<< HEAD
 - Completed reload, in  0.991 seconds
 Domain Reload Profiling:
 	ReloadAssembly (991ms)
 		BeginReloadAssembly (102ms)
+=======
+- Completed reload, in  1.022 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1022ms)
+		BeginReloadAssembly (118ms)
+>>>>>>> parent of f65b4dd (upd)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
+<<<<<<< HEAD
 			CreateAndSetChildDomain (31ms)
 		EndReloadAssembly (825ms)
 			LoadAssemblies (84ms)
@@ -329,12 +505,27 @@ Domain Reload Profiling:
 			ReleaseScriptCaches (1ms)
 			RebuildScriptCaches (52ms)
 			SetupLoadedEditorAssemblies (320ms)
+=======
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (841ms)
+			LoadAssemblies (80ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (274ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (52ms)
+			SetupLoadedEditorAssemblies (315ms)
+>>>>>>> parent of f65b4dd (upd)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (0ms)
+<<<<<<< HEAD
 				BeforeProcessingInitializeOnLoad (84ms)
 				ProcessInitializeOnLoadAttributes (213ms)
+=======
+				BeforeProcessingInitializeOnLoad (79ms)
+				ProcessInitializeOnLoadAttributes (212ms)
+>>>>>>> parent of f65b4dd (upd)
 				ProcessInitializeOnLoadMethodAttributes (10ms)
 				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
@@ -347,8 +538,13 @@ Unloading 1498 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 148.3 MB.
 System memory in use after: 148.4 MB.
 
+<<<<<<< HEAD
 Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1996.
 Total: 2.831400 ms (FindLiveObjects: 0.215700 ms CreateObjectMapping: 0.036700 ms MarkObjects: 2.558300 ms  DeleteObjects: 0.019200 ms)
+=======
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1953.
+Total: 2.772300 ms (FindLiveObjects: 0.178400 ms CreateObjectMapping: 0.038900 ms MarkObjects: 2.538300 ms  DeleteObjects: 0.015200 ms)
+>>>>>>> parent of f65b4dd (upd)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -363,6 +559,7 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.002450 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -373,10 +570,23 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (1001ms)
 		BeginReloadAssembly (105ms)
+=======
+Registered in 0.002765 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.984 seconds
+Domain Reload Profiling:
+	ReloadAssembly (985ms)
+		BeginReloadAssembly (108ms)
+>>>>>>> parent of f65b4dd (upd)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
+<<<<<<< HEAD
 			CreateAndSetChildDomain (30ms)
 		EndReloadAssembly (822ms)
 			LoadAssemblies (86ms)
@@ -385,10 +595,21 @@ Domain Reload Profiling:
 			ReleaseScriptCaches (1ms)
 			RebuildScriptCaches (49ms)
 			SetupLoadedEditorAssemblies (315ms)
+=======
+			CreateAndSetChildDomain (29ms)
+		EndReloadAssembly (814ms)
+			LoadAssemblies (82ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (274ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (57ms)
+			SetupLoadedEditorAssemblies (300ms)
+>>>>>>> parent of f65b4dd (upd)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (0ms)
+<<<<<<< HEAD
 				BeforeProcessingInitializeOnLoad (80ms)
 				ProcessInitializeOnLoadAttributes (213ms)
 				ProcessInitializeOnLoadMethodAttributes (10ms)
@@ -447,12 +668,17 @@ Domain Reload Profiling:
 				RefreshPlugins (1ms)
 				BeforeProcessingInitializeOnLoad (89ms)
 				ProcessInitializeOnLoadAttributes (211ms)
+=======
+				BeforeProcessingInitializeOnLoad (77ms)
+				ProcessInitializeOnLoadAttributes (202ms)
+>>>>>>> parent of f65b4dd (upd)
 				ProcessInitializeOnLoadMethodAttributes (9ms)
 				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
+<<<<<<< HEAD
 Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1498 Unused Serialized files (Serialized files now loaded: 0)
@@ -623,12 +849,21 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.40 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
+=======
+Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+>>>>>>> parent of f65b4dd (upd)
 Unloading 1498 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 148.3 MB.
 System memory in use after: 148.4 MB.
 
+<<<<<<< HEAD
 Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2006.
 Total: 3.220800 ms (FindLiveObjects: 0.150200 ms CreateObjectMapping: 0.035200 ms MarkObjects: 2.990000 ms  DeleteObjects: 0.043700 ms)
+=======
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1955.
+Total: 2.777200 ms (FindLiveObjects: 0.149100 ms CreateObjectMapping: 0.035300 ms MarkObjects: 2.574800 ms  DeleteObjects: 0.016300 ms)
+>>>>>>> parent of f65b4dd (upd)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -643,12 +878,17 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.002937 seconds.
+=======
+Registered in 0.002355 seconds.
+>>>>>>> parent of f65b4dd (upd)
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.49 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
+<<<<<<< HEAD
 - Completed reload, in  1.035 seconds
 Domain Reload Profiling:
 	ReloadAssembly (1036ms)
@@ -709,10 +949,17 @@ Mono: successfully reloaded assembly
 Domain Reload Profiling:
 	ReloadAssembly (997ms)
 		BeginReloadAssembly (108ms)
+=======
+- Completed reload, in  0.986 seconds
+Domain Reload Profiling:
+	ReloadAssembly (987ms)
+		BeginReloadAssembly (117ms)
+>>>>>>> parent of f65b4dd (upd)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
+<<<<<<< HEAD
 			CreateAndSetChildDomain (28ms)
 		EndReloadAssembly (811ms)
 			LoadAssemblies (79ms)
@@ -777,10 +1024,21 @@ Domain Reload Profiling:
 			ReleaseScriptCaches (1ms)
 			RebuildScriptCaches (52ms)
 			SetupLoadedEditorAssemblies (366ms)
+=======
+			CreateAndSetChildDomain (30ms)
+		EndReloadAssembly (808ms)
+			LoadAssemblies (79ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (270ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (55ms)
+			SetupLoadedEditorAssemblies (300ms)
+>>>>>>> parent of f65b4dd (upd)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (0ms)
+<<<<<<< HEAD
 				BeforeProcessingInitializeOnLoad (96ms)
 				ProcessInitializeOnLoadAttributes (245ms)
 				ProcessInitializeOnLoadMethodAttributes (12ms)
@@ -839,6 +1097,10 @@ Domain Reload Profiling:
 				RefreshPlugins (1ms)
 				BeforeProcessingInitializeOnLoad (81ms)
 				ProcessInitializeOnLoadAttributes (213ms)
+=======
+				BeforeProcessingInitializeOnLoad (76ms)
+				ProcessInitializeOnLoadAttributes (202ms)
+>>>>>>> parent of f65b4dd (upd)
 				ProcessInitializeOnLoadMethodAttributes (9ms)
 				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
@@ -846,6 +1108,7 @@ Domain Reload Profiling:
 			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.37 ms, found 2 plugins.
+<<<<<<< HEAD
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1498 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 148.3 MB.
@@ -1357,6 +1620,15 @@ System memory in use after: 148.4 MB.
 
 Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2032.
 Total: 3.216700 ms (FindLiveObjects: 0.225600 ms CreateObjectMapping: 0.036200 ms MarkObjects: 2.928100 ms  DeleteObjects: 0.024500 ms)
+=======
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1498 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 73.3 MB.
+System memory in use after: 73.4 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 1957.
+Total: 3.239200 ms (FindLiveObjects: 0.219200 ms CreateObjectMapping: 0.037600 ms MarkObjects: 2.963200 ms  DeleteObjects: 0.017500 ms)
+>>>>>>> parent of f65b4dd (upd)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
