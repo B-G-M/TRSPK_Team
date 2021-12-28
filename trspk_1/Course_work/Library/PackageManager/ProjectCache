@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637757571543335393
+      ticks: 637760390900997935
     m_Hash: 1139918710
   m_LockFileStatus:
     m_FilePath: D:/TRSPK_Team_1/trspk_1/Course_work/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637757571543765776
+      ticks: 637760390901007625
     m_Hash: 1189527608
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}

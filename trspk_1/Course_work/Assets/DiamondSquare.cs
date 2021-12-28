@@ -28,7 +28,7 @@ public class DiamondSquare : MonoBehaviour
 	private int fourPow = 0;
 	public int mapRang = 0;
 
-	private int wet;
+	static private int wet;
 	private float maxY = 0;
 	private float minY = 0;
 
@@ -38,8 +38,6 @@ public class DiamondSquare : MonoBehaviour
 
 	public float[,] heightMap;
 
-	private List<IJ[]> waitingDot = new List<IJ[]>();
-
 	private List<IJ> diamond = new List<IJ>();
 
 	private Color32[,] colorsArr;
@@ -48,12 +46,15 @@ public class DiamondSquare : MonoBehaviour
 	{
 		return heightMap[i, j];
 	}
+
 	public Color32 GetColor(float Y)
 	{
 		int stepColor = (int)maxY / 4;
 		float y = Y;
 		if (Y < 0)
 			return new Color32(4, 99, 255, 50);
+		//if (Y >= 0)
+			//return new Color32(196, 212, 170, 255);
 
 		int index = (int)(y / stepColor);
 
@@ -69,49 +70,58 @@ public class DiamondSquare : MonoBehaviour
 		{
 			return colorsArr[0, 0];
 		}
-		
-
 	}
 
 	public void TerraForm()
 	{
-		colorsArr = new Color32[4,6];
-		colorsArr[0,0] = new Color32(233, 221, 199, 255);
-		colorsArr[0,1] = new Color32(196, 212, 170, 255);
-		colorsArr[0,2] = new Color32(169, 204, 164, 255);
-		colorsArr[0,3] = new Color32(169, 204, 164, 255);
-		colorsArr[0,4] = new Color32(156, 187, 169, 255);
-		colorsArr[0,5] = new Color32(156, 187, 169, 255);
-		colorsArr[1,0] = new Color32(228, 232, 202, 255);
-		colorsArr[1,1] = new Color32(196, 212, 170, 255);
-		colorsArr[1,2] = new Color32(196, 212, 170, 255);
-		colorsArr[1,3] = new Color32(180, 201, 169, 255);
-		colorsArr[1,4] = new Color32(180, 201, 169, 255);
-		colorsArr[1,5] = new Color32(164, 196, 168, 255);
-		colorsArr[2,0] = new Color32(228, 232, 202, 255);
-		colorsArr[2,1] = new Color32(228, 232, 202, 255);
-		colorsArr[2,2] = new Color32(196, 204, 187, 255);
-		colorsArr[2,3] = new Color32(196, 204, 187, 255);
-		colorsArr[2,4] = new Color32(204, 212, 187, 255);
-		colorsArr[2,5] = new Color32(204, 212, 187, 255);
-		colorsArr[3,0] = new Color32(153, 153, 153, 255);
-		colorsArr[3,1] = new Color32(187, 187, 187, 255);
-		colorsArr[3,2] = new Color32(221, 221, 187, 255);
-		colorsArr[3,3] = new Color32(248, 248, 248, 255);
-		colorsArr[3,4] = new Color32(252, 252, 252, 255);
-		colorsArr[3,5] = new Color32(255, 255, 255, 255);
+		if (true)
+		{
+			colorsArr = new Color32[4, 6];
+			colorsArr[0, 0] = new Color32(233, 221, 199, 255);
+			colorsArr[0, 1] = new Color32(196, 212, 170, 255);
+			colorsArr[0, 2] = new Color32(169, 204, 164, 255);
+			colorsArr[0, 3] = new Color32(169, 204, 164, 255);
+			colorsArr[0, 4] = new Color32(156, 187, 169, 255);
+			colorsArr[0, 5] = new Color32(156, 187, 169, 255);
+			colorsArr[1, 0] = new Color32(228, 232, 202, 255);
+			colorsArr[1, 1] = new Color32(196, 212, 170, 255);
+			colorsArr[1, 2] = new Color32(196, 212, 170, 255);
+			colorsArr[1, 3] = new Color32(180, 201, 169, 255);
+			colorsArr[1, 4] = new Color32(180, 201, 169, 255);
+			colorsArr[1, 5] = new Color32(164, 196, 168, 255);
+			colorsArr[2, 0] = new Color32(228, 232, 202, 255);
+			colorsArr[2, 1] = new Color32(228, 232, 202, 255);
+			colorsArr[2, 2] = new Color32(196, 204, 187, 255);
+			colorsArr[2, 3] = new Color32(196, 204, 187, 255);
+			colorsArr[2, 4] = new Color32(204, 212, 187, 255);
+			colorsArr[2, 5] = new Color32(204, 212, 187, 255);
+			colorsArr[3, 0] = new Color32(228, 229, 220, 255);
+			colorsArr[3, 1] = new Color32(238, 240, 225, 255);
+			colorsArr[3, 2] = new Color32(221, 221, 187, 255);
+			colorsArr[3, 3] = new Color32(248, 248, 248, 255);
+			colorsArr[3, 4] = new Color32(252, 252, 252, 255);
+			colorsArr[3, 5] = new Color32(255, 255, 255, 255);
 
-		wet = UnityEngine.Random.Range(0, 5);
+		}
+
+		wet = UnityEngine.Random.Range(wet - 1, wet + 2);
+		if (wet > 5)
+			wet = 5;
+		if (wet < 0)
+			wet = 0;
+
 		if (wet == 0)
 			roughness = 0.1f;
 		if (wet == 1)
-			roughness = 0.2f;
+			roughness = 0.15f;
 		if (wet == 2)
-			roughness = 0.3f;
+			roughness = 0.2f;
 		if (wet == 3)
-			roughness = 0.4f;
+			roughness = 0.25f;
 		if (wet == 4)
-			roughness = 0.5f;
+			roughness = 0.3f;
+
+		outOfBoundsH = upperRange * roughness;
 
 		IJ start = new IJ(0, 0);
 		IJ finish = new IJ(mapRang - 1, mapRang - 1);
@@ -121,7 +131,6 @@ public class DiamondSquare : MonoBehaviour
 		square[1] = new IJ(start.i, finish.j);
 		square[2] = new IJ(finish.i, start.j);
 		square[3] = finish;
-		waitingDot.Add(square);
 
 		step = (int)Mathf.Sqrt(heightMap.Length);
 
@@ -140,6 +149,18 @@ public class DiamondSquare : MonoBehaviour
 		
 
 		Diamond(square, true);
+
+		for (int i = 0; i < mapRang; i++)
+		{
+			heightMap[i, mapRang - 1] = heightMap[i, mapRang - 3];
+			heightMap[i, mapRang - 2] = heightMap[i, mapRang - 3];
+		}
+		for (int i = 0; i < mapRang; i++)
+		{
+			heightMap[mapRang - 1, i] = heightMap[mapRang - 3, i];
+			heightMap[mapRang - 2, i] = heightMap[mapRang - 3, i];
+			
+		}
 	}
 
 	private void Diamond(IJ[] square, bool down)
@@ -227,6 +248,7 @@ public class DiamondSquare : MonoBehaviour
 		}
 
 	}
+
 	private float GiveHeightDiamond(IJ[] diamond)//подсчет высоты для центра ромба
 	{
 		float diagonal;
@@ -297,15 +319,9 @@ public class DiamondSquare : MonoBehaviour
 
 	public void Nachalo(int N, float unit)//начало
 	{
-		outOfBoundsH = upperRange * 0.25f;
 		this.unit = unit;
 		mapRang = N;
 
-		//int lenght = 0;
-		//for (int i = 0; lenght < mapRang; i++)
-		//{
-		//	lenght = (int)Mathf.Pow(2, i) + 1;
-		//}
 		if (heightMap == null)
 		{
 			heightMap = new float[N, N];
@@ -315,10 +331,3 @@ public class DiamondSquare : MonoBehaviour
 	}
 
 }
-//بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-//ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ
-//ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-//مَٰلِكِ يَوْمِ ٱلدِّينِ
-//إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ
-//ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ
-//صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ

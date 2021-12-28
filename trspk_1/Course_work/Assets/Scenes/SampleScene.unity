@@ -152,7 +152,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -332,8 +332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ffa24caeaf410b478bd6f743c697586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upperRange: 1
-  roughness: 0.01
   mapRang: 0
 --- !u!23 &1292760820
 MeshRenderer:
@@ -410,9 +408,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a864482b88578d14ab3cad49189425c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diamondSquare: {fileID: 0}
-  n: 5
-  quality: 100
 --- !u!114 &1292760824
 MonoBehaviour:
   m_ObjectHideFlags: 0
